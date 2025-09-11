@@ -1,7 +1,6 @@
 ---
-title: "mywebsite"
+title: "Rebecca Sokol-Snyder"
 ---
 
-This is a Quarto website.
+Meticulously organized and fiercely passionate about using data to advance causes I care about.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
