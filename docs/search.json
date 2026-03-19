@@ -25,14 +25,14 @@
     "href": "about.html#skills",
     "title": "About",
     "section": "Skills",
-    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy| supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling\nProgramming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOPm, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
+    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling\nProgramming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Rebecca Sokol-Snyder",
     "section": "",
-    "text": "Hi, I’m Rebecca.\n\n\nData scientist with 5+ years of experience managing end-to-end analysis projects and turning messy, unstructured data into scalable data systems. I work across Python, R, and SQL to build reproducible pipelines, automate reporting, and communicate findings for diverse audiences. Currently pursuing a Master of Data Science at the University of British Columbia with a focus on applied machine learning and statistical analysis. I’m drawn to mission-driven organizations making an impact on people’s lives, not just the bottom line.\n\nView my projects → About me\n\n\n\n\n Back to top"
+    "text": "Hi, I’m Rebecca.\n\n\nData scientist with 5+ years of experience managing end-to-end analysis projects and turning messy, unstructured data into scalable data systems. I work across Python, R, and SQL to build reproducible pipelines, automate reporting, and communicate findings for diverse audiences. Currently pursuing a Master of Data Science at the University of British Columbia with a focus on applied machine learning and statistical analysis. I’m drawn to mission-driven organizations making an impact on people’s lives, not just the bottom line.\n\nView my projects → About me\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "projects/index.html",

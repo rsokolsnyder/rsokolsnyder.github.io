@@ -4,6 +4,8 @@ toc: false
 code-tools: false
 ---
 
+::: {.grid}
+::: {.g-col-12 .g-col-md-8}
 ::: {.hero}
 ::: {.hero-title}
 Hi, I'm Rebecca.
@@ -15,4 +17,9 @@ Data scientist with 5+ years of experience managing end-to-end analysis projects
 
 [View my projects →](projects/index.qmd){.btn .btn-primary style="margin-top: 1.5rem;"}
 [About me](about.qmd){.btn .btn-outline-secondary style="margin-top: 1.5rem; margin-left: 0.5rem;"}
+:::
+:::
+::: {.g-col-12 .g-col-md-4 style="display: flex; align-items: center; justify-content: center;"}
+![](assets/headshot.jpeg){style="border-radius: 80%; width: 90%; max-width: 600px;"}
+:::
 :::
