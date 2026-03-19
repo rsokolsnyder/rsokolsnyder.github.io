@@ -1,7 +1,7 @@
 ---
 title: "Understanding political bias and information transparency in the age of AI"
 date: "2026-01-14"
-categories: [news, analysis, bias, politics]
+categories: [news, analysis, bias, politics, LLM, AI]
 image: ../../assets/posts/political-bias.jpeg
 ---
 
