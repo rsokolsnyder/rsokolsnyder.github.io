@@ -32,9 +32,8 @@ website:
 
   # Open Graph / social preview
   open-graph:
-    title: "Your Name — Data Science Portfolio"
+    title: "Rebecca Sokol-Snyder — Data Science Portfolio"
     description: "Projects and writing on data science, analytics, and visualisation."
-    image: assets/og-preview.png   # optional: a 1200×630 preview image
 
 format:
   html:

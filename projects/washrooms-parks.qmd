@@ -1,9 +1,9 @@
 ---
-title: "Parks Washroom Predictor"
+title: "Washrooms in Vancouver Parks"
 description: "Predicting the precense of washroom infrastructure in city parks"
-date: 2024-09-01
+date: 2025-12-13
 categories: [Python, machine-learning, MDS] 
-image: "../../assets/projects/my-project-cover.png"
+image: "../../assets/projects/parks.jpg"
 ---
 
 ## Overview
