@@ -1,5 +1,5 @@
 /.quarto/
 .Rproj.user
-.Rproj
+*.Rproj
 /projects/example-project.qmd
 /docs/example-project.html
