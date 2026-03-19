@@ -35,8 +35,9 @@ about:
 
 ## Skills
 
-**Machine Learning** scikit-learn, PyTorch, XGBoost  
-**Programming & Data** Python (Pandas, NumPy), R, SQL, dbt, MongoDB  
+**Machine Learning** scikit-learn, PyTorch, XGBoost, spaCy| supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling  
+**Programming & Data** Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOPm, database management   
+**Visualization** ggplot, Altair, Matplotlib, Looker Studio, Shiny  
 **Cloud & Infrastructure** Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github  
 **Statistical Analysis** regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling  
-**Visualization** ggplot, Altair, Matplotlib, Looker Studio, Shiny  
+
