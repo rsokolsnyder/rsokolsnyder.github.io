@@ -1,8 +1,8 @@
 ---
-title: "Project Title Here"
-description: "One or two sentence summary — what you did and what it shows."
+title: "Parks Washroom Predictor"
+description: "Predicting the precense of washroom infrastructure in city parks"
 date: 2024-09-01
-categories: [Python, machine-learning, school]   # used for filtering on the listing page
+categories: [Python, machine-learning, MDS] 
 image: "../../assets/projects/my-project-cover.png"
 ---
 

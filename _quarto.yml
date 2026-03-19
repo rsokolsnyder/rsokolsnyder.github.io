@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs          # GitHub Pages can serve from /docs on main branch
+  output-dir: docs # GitHub Pages can serve from /docs on main branch
 
 
 website:
