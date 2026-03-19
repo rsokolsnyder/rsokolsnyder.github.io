@@ -1,51 +1,31 @@
 ---
-title: "Washrooms in Vancouver Parks"
-description: "Predicting the precense of washroom infrastructure in city parks"
+title: "Washrooms in Vancouver Public Parks"
+description: "A binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data."
 date: 2025-12-13
-categories: [Python, machine-learning, MDS] 
+categories: [Python, machine-learning, classification, Docker, Pandera, data-validation, reproducibility, open-data]
 image: "../../assets/projects/parks.jpg"
 ---
 
-## Overview
+## The Question
 
-Brief context: what was the goal, what data was involved, what did you produce?
+In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not.
 
-Keep this paragraph to 3–4 sentences. The listing card will pull `description:` from the YAML above, so this section can go a little deeper.
+## The Pipeline
 
-## Data
+Before getting to predictive modelling, we built a data validation pipeline using Pandera to enforce schema constraints on the input data. This included checks for missingness, expected data types, and valid category levels. By building data checks in at the ingestion stage, we were able to prevent data issues downstream and making our overall pipeline more robust.
 
-Where the data came from, rough size/shape, any interesting cleaning steps. If it was a school project with a provided dataset, a one-liner is fine.
 
-```python
-import pandas as pd
+## Reproducibility
 
-df = pd.read_csv("data/raw.csv")
-print(df.shape)   # (12540, 24)
-df.head()
-```
+To ensure that our analysis could be run again and again producing the same results, we spun up a Docker container with stable python versioning and pinned versions of each of our packages. We additionally, included a `docker-compose.yml` file which is automatically updated with the latest version of the container using a GitHub Action workflow. This had the added benefit for us to collaborate more easily with fewer conflicts as we built out our model, making sure we were all coding in the same exact environment. Furthermore, we wrote a `Makefile` to allow the entire analysis to run with only one command. To run the analysis yourself, clone the repository and follow the setup instructions in the README; the entire pipeline can be run with a single `make all` command.
 
-## Approach
+## The Model and Findings
 
-What method or model did you use and why? This is where you show your thinking — not just *what* you did but *why* you chose it over alternatives.
-
-## Key findings
-
-A few bullet points or a short paragraph. Visuals go well here — Quarto renders matplotlib, ggplot, and Plotly outputs natively.
-
-```python
-import matplotlib.pyplot as plt
-
-fig, ax = plt.subplots(figsize=(8, 4))
-# ... your actual plot code
-plt.tight_layout()
-plt.show()
-```
-
-## Reflections
-
-What would you do differently? What did you learn that surprised you? This is the paragraph that makes a portfolio project feel real rather than polished-but-hollow.
+We compared the performance of a k-nearest neighbors (k-nn) algorithm and a Support Vector Machine with Radial Basis Function (SVM RBF) algorithm against a baseline to build a binary classification model predicting the existence of a washroom in each park. We included neighbourhood name, park size (hectare), whether the park is official, whether there are any advisories, whether there are additional facilities and whether the park has special features to fit the model. While neither model was able to substantially improve on the baseline, this was informative in and of itself, suggesting that washroom presence is more a function of historical infrastructure decisions or other neighborhood characteristics that were not included in the dataset we used. However, we did find that park size and the presence of other amenities were stronger signals than the other features in predicting the presence of washrooms, supporting our initial intuition that washrooms would be associated with larger, more developed parks.
 
 ---
 
-**Code:** [View on GitHub](https://github.com/yourusername/repo)  
-**Tools:** Python · scikit-learn · pandas · matplotlib
+**Report:** [View the rendered Report](https://rsokolsnyder.github.io/washrooms-in-vancouver-parks/reports/washrooms_in_parks.html)  
+**Code:** [View on GitHub](https://github.com/rsokolsnyder/washrooms-in-vancouver-parks)  
+**Tools:** Python · scikit-learn · Pandera · Docker · matplotlib  
+**Collaborators:** William Song and Chung Ki (Harry) Yau  

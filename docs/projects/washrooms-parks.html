@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-12-13">
-<meta name="description" content="Predicting the precense of washroom infrastructure in city parks">
+<meta name="description" content="A binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.">
 
-<title>Washrooms in Vancouver Parks – Rebecca Sokol-Snyder</title>
+<title>Washrooms in Vancouver Public Parks – Rebecca Sokol-Snyder</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -171,11 +136,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
-  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key findings</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a></li>
+  <li><a href="#the-question" id="toc-the-question" class="nav-link active" data-scroll-target="#the-question">The Question</a></li>
+  <li><a href="#the-pipeline" id="toc-the-pipeline" class="nav-link" data-scroll-target="#the-pipeline">The Pipeline</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#the-model-and-findings" id="toc-the-model-and-findings" class="nav-link" data-scroll-target="#the-model-and-findings">The Model and Findings</a></li>
   </ul>
 </nav>
     </div>
@@ -184,17 +148,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Washrooms in Vancouver Parks</h1>
+<h1 class="title">Washrooms in Vancouver Public Parks</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Python</div>
     <div class="quarto-category">machine-learning</div>
-    <div class="quarto-category">MDS</div>
+    <div class="quarto-category">classification</div>
+    <div class="quarto-category">Docker</div>
+    <div class="quarto-category">Pandera</div>
+    <div class="quarto-category">data-validation</div>
+    <div class="quarto-category">reproducibility</div>
+    <div class="quarto-category">open-data</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Predicting the precense of washroom infrastructure in city parks
+    A binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.
   </div>
 </div>
 
@@ -217,40 +186,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Brief context: what was the goal, what data was involved, what did you produce?</p>
-<p>Keep this paragraph to 3–4 sentences. The listing card will pull <code>description:</code> from the YAML above, so this section can go a little deeper.</p>
+<section id="the-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-question">The Question</h2>
+<p>In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not.</p>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>Where the data came from, rough size/shape, any interesting cleaning steps. If it was a school project with a provided dataset, a one-liner is fine.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/raw.csv"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)   <span class="co"># (12540, 24)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="the-pipeline">The Pipeline</h2>
+<p>Before getting to predictive modelling, we built a data validation pipeline using Pandera to enforce schema constraints on the input data. This included checks for missingness, expected data types, and valid category levels. By building data checks in at the ingestion stage, we were able to prevent data issues downstream and making our overall pipeline more robust.</p>
 </section>
-<section id="approach" class="level2">
-<h2 class="anchored" data-anchor-id="approach">Approach</h2>
-<p>What method or model did you use and why? This is where you show your thinking — not just <em>what</em> you did but <em>why</em> you chose it over alternatives.</p>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<p>To ensure that our analysis could be run again and again producing the same results, we spun up a Docker container with stable python versioning and pinned versions of each of our packages. We additionally, included a <code>docker-compose.yml</code> file which is automatically updated with the latest version of the container using a GitHub Action workflow. This had the added benefit for us to collaborate more easily with fewer conflicts as we built out our model, making sure we were all coding in the same exact environment. Furthermore, we wrote a <code>Makefile</code> to allow the entire analysis to run with only one command. To run the analysis yourself, clone the repository and follow the setup instructions in the README; the entire pipeline can be run with a single <code>make all</code> command.</p>
 </section>
-<section id="key-findings" class="level2">
-<h2 class="anchored" data-anchor-id="key-findings">Key findings</h2>
-<p>A few bullet points or a short paragraph. Visuals go well here — Quarto renders matplotlib, ggplot, and Plotly outputs natively.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ... your actual plot code</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="reflections" class="level2">
-<h2 class="anchored" data-anchor-id="reflections">Reflections</h2>
-<p>What would you do differently? What did you learn that surprised you? This is the paragraph that makes a portfolio project feel real rather than polished-but-hollow.</p>
+<section id="the-model-and-findings" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-and-findings">The Model and Findings</h2>
+<p>We compared the performance of a k-nearest neighbors (k-nn) algorithm and a Support Vector Machine with Radial Basis Function (SVM RBF) algorithm against a baseline to build a binary classification model predicting the existence of a washroom in each park. We included neighbourhood name, park size (hectare), whether the park is official, whether there are any advisories, whether there are additional facilities and whether the park has special features to fit the model. While neither model was able to substantially improve on the baseline, this was informative in and of itself, suggesting that washroom presence is more a function of historical infrastructure decisions or other neighborhood characteristics that were not included in the dataset we used. However, we did find that park size and the presence of other amenities were stronger signals than the other features in predicting the presence of washrooms, supporting our initial intuition that washrooms would be associated with larger, more developed parks.</p>
 <hr>
-<p><strong>Code:</strong> <a href="https://github.com/yourusername/repo">View on GitHub</a><br>
-<strong>Tools:</strong> Python · scikit-learn · pandas · matplotlib</p>
+<p><strong>Report:</strong> <a href="https://rsokolsnyder.github.io/washrooms-in-vancouver-parks/reports/washrooms_in_parks.html">View the rendered Report</a><br>
+<strong>Code:</strong> <a href="https://github.com/rsokolsnyder/washrooms-in-vancouver-parks">View on GitHub</a><br>
+<strong>Tools:</strong> Python · scikit-learn · Pandera · Docker · matplotlib<br>
+<strong>Collaborators:</strong> William Song and Chung Ki (Harry) Yau</p>
 
 
 </section>

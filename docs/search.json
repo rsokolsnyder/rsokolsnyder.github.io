@@ -39,14 +39,14 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Washrooms in Vancouver Parks\n\n\n\nPython\n\nmachine-learning\n\nMDS\n\n\n\nPredicting the precense of washroom infrastructure in city parks\n\n\n\nDec 13, 2025\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Washrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "projects/washrooms-parks.html",
     "href": "projects/washrooms-parks.html",
-    "title": "Washrooms in Vancouver Parks",
+    "title": "Washrooms in Vancouver Public Parks",
     "section": "",
-    "text": "Brief context: what was the goal, what data was involved, what did you produce?\nKeep this paragraph to 3–4 sentences. The listing card will pull description: from the YAML above, so this section can go a little deeper."
+    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
   },
   {
     "objectID": "projects/washrooms-parks.html#overview",
@@ -89,5 +89,33 @@
     "title": "Writing",
     "section": "",
     "text": "No matching items\n Back to top"
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-question",
+    "href": "projects/washrooms-parks.html#the-question",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "",
+    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-pipeline",
+    "href": "projects/washrooms-parks.html#the-pipeline",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "The Pipeline",
+    "text": "The Pipeline\nBefore getting to predictive modelling, we built a data validation pipeline using Pandera to enforce schema constraints on the input data. This included checks for missingness, expected data types, and valid category levels. By building data checks in at the ingestion stage, we were able to prevent data issues downstream and making our overall pipeline more robust."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#reproducibility",
+    "href": "projects/washrooms-parks.html#reproducibility",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nTo ensure that our analysis could be run again and again producing the same results, we spun up a Docker container with stable python versioning and pinned versions of each of our packages. We additionally, included a docker-compose.yml file which is automatically updated with the latest version of the container using a GitHub Action workflow. This had the added benefit for us to collaborate more easily with fewer conflicts as we built out our model, making sure we were all coding in the same exact environment. Furthermore, we wrote a Makefile to allow the entire analysis to run with only one command. To run the analysis yourself, clone the repository and follow the setup instructions in the README; the entire pipeline can be run with a single make all command."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-model-and-findings",
+    "href": "projects/washrooms-parks.html#the-model-and-findings",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "The Model and Findings",
+    "text": "The Model and Findings\nWe compared the performance of a k-nearest neighbors (k-nn) algorithm and a Support Vector Machine with Radial Basis Function (SVM RBF) algorithm against a baseline to build a binary classification model predicting the existence of a washroom in each park. We included neighbourhood name, park size (hectare), whether the park is official, whether there are any advisories, whether there are additional facilities and whether the park has special features to fit the model. While neither model was able to substantially improve on the baseline, this was informative in and of itself, suggesting that washroom presence is more a function of historical infrastructure decisions or other neighborhood characteristics that were not included in the dataset we used. However, we did find that park size and the presence of other amenities were stronger signals than the other features in predicting the presence of washrooms, supporting our initial intuition that washrooms would be associated with larger, more developed parks.\n\nReport: View the rendered Report\nCode: View on GitHub\nTools: Python · scikit-learn · Pandera · Docker · matplotlib\nCollaborators: William Song and Chung Ki (Harry) Yau"
   }
 ]
