@@ -1,22 +1,63 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: docs          # GitHub Pages can serve from /docs on main branch
+
 
 website:
-  title: "Rebecca's Professional Website"
+  title: "Rebecca Sokol-Snyder"        
+  description: "Data scientist working across Python, R, and SQL."
+  favicon: assets/favicon.ico
+
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/rsokolsnyder 
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://linkedin.com/in/rsokolsn
+        aria-label: LinkedIn
+
+  page-footer:
+    center: "Built with [Quarto](https://quarto.org) · © 2026 Rebecca Sokol-Snyder"
+    background: light
+
+  back-to-top-navigation: true
+
+  # Open Graph / social preview
+  open-graph:
+    title: "Your Name — Data Science Portfolio"
+    description: "Projects and writing on data science, analytics, and visualisation."
+    image: assets/og-preview.png   # optional: a 1200×630 preview image
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      - cosmo          
+      - custom.scss   
     toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    code-fold: true        
+    code-summary: "Show code"
+    code-tools: false       
+    code-overflow: scroll
+    smooth-scroll: true
+    fig-align: center
+    fig-cap-location: bottom
+    link-external-newwindow: true
+    link-external-icon: true
 
+execute:
+  freeze: auto              
+  echo: true
+  warning: false
+  message: false
 
 

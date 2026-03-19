@@ -1,0 +1,12 @@
+---
+title: "Writing"
+listing:
+  contents: "posts"
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [date, title, description, categories, reading-time]
+  feed: true                 # generates an RSS feed automatically
+page-layout: full
+title-block-banner: false
+---

@@ -1,0 +1,17 @@
+---
+title: "Projects"
+listing:
+  contents: "."              
+  exclude:
+    filename: "index.qmd"
+  type: grid
+  grid-columns: 2
+  sort: "date desc"
+  categories: true
+  fields: [image, title, description, categories, date]
+  image-height: "200px"
+  image-placeholder: "../assets/project-placeholder.png"
+  feed: false
+page-layout: full
+title-block-banner: false
+---

@@ -4,13 +4,216 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi! My name is Rebecca. I am currently a Masters of Data Science student at the University of British Columbia. Previously, I have worked in both the political and non-profit sectors, specializing in transforming raw data into actionable insights to solve complex problems and drive meaningful impact. I’ve led and executed high-impact data projects, including building data integration processes and creating visualizations that provide clarity for stakeholders. I’ve worked with national clients and built robust systems for automated reporting and analysis. In addition to my technical skills, I am experienced in collaborating cross-functionally with leadership teams, translating business needs into technical requirements, and driving project success from start to finish."
+    "text": "Senior Data Analyst\nCommunity Tech Alliance\nJanuary 2024 – November 2024\n\n\nData Analyst\nCommunity Tech Alliance\nMarch 2022 - January 2024\n\n\nAssistant Data Administrator\nWorking America, AFL-CIO\nAugust 2020 - March 2022\n\n\nData Assistant\nWorking America, AFL-CIO\nAugust 2019 - August 2020"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Rebecca Sokol-Snyder",
     "section": "",
-    "text": "Meticulously organized and fiercely passionate about using data to advance causes I care about."
+    "text": "Hi, I’m Rebecca.\n\n\nData scientist with 5+ years of experience managing end-to-end analysis projects and turning messy, unstructured data into scalable data systems. I work across Python, R, and SQL to build reproducible pipelines, automate reporting, and communicate findings for diverse audiences. Currently pursuing a Master of Data Science at the University of British Columbia with a focus on applied machine learning and statistical analysis. I’m drawn to mission-driven organizations making an impact on people’s lives, not just the bottom line.\n\nView my projects → About me\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Project Title Here\n\n\n\nPython\n\nmachine-learning\n\nschool\n\n\n\nOne or two sentence summary — what you did and what it shows.\n\n\n\nSep 1, 2024\n\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "example-project.html",
+    "href": "example-project.html",
+    "title": "Project Title Here",
+    "section": "",
+    "text": "Brief context: what was the goal, what data was involved, what did you produce?\nKeep this paragraph to 3–4 sentences. The listing card will pull description: from the YAML above, so this section can go a little deeper."
+  },
+  {
+    "objectID": "example-project.html#overview",
+    "href": "example-project.html#overview",
+    "title": "Project Title Here",
+    "section": "",
+    "text": "Brief context: what was the goal, what data was involved, what did you produce?\nKeep this paragraph to 3–4 sentences. The listing card will pull description: from the YAML above, so this section can go a little deeper."
+  },
+  {
+    "objectID": "example-project.html#data",
+    "href": "example-project.html#data",
+    "title": "Project Title Here",
+    "section": "Data",
+    "text": "Data\nWhere the data came from, rough size/shape, any interesting cleaning steps. If it was a school project with a provided dataset, a one-liner is fine.\nimport pandas as pd\n\ndf = pd.read_csv(\"data/raw.csv\")\nprint(df.shape)   # (12540, 24)\ndf.head()"
+  },
+  {
+    "objectID": "example-project.html#approach",
+    "href": "example-project.html#approach",
+    "title": "Project Title Here",
+    "section": "Approach",
+    "text": "Approach\nWhat method or model did you use and why? This is where you show your thinking — not just what you did but why you chose it over alternatives."
+  },
+  {
+    "objectID": "example-project.html#key-findings",
+    "href": "example-project.html#key-findings",
+    "title": "Project Title Here",
+    "section": "Key findings",
+    "text": "Key findings\nA few bullet points or a short paragraph. Visuals go well here — Quarto renders matplotlib, ggplot, and Plotly outputs natively.\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(8, 4))\n# ... your actual plot code\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "example-project.html#reflections",
+    "href": "example-project.html#reflections",
+    "title": "Project Title Here",
+    "section": "Reflections",
+    "text": "Reflections\nWhat would you do differently? What did you learn that surprised you? This is the paragraph that makes a portfolio project feel real rather than polished-but-hollow.\n\nCode: View on GitHub\nTools: Python · scikit-learn · pandas · matplotlib"
+  },
+  {
+    "objectID": "blog/example-post.html",
+    "href": "blog/example-post.html",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "",
+    "text": "Every Monday morning, one analyst on our team spent roughly three hours pulling numbers from several source systems into a spreadsheet, formatting it, and emailing it to a dozen stakeholders. It was error-prone, nobody was confident the numbers matched, and the data was already a week old by the time it landed in inboxes.\nI was asked to look into automating it."
+  },
+  {
+    "objectID": "blog/example-post.html#the-problem",
+    "href": "blog/example-post.html#the-problem",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "",
+    "text": "Every Monday morning, one analyst on our team spent roughly three hours pulling numbers from several source systems into a spreadsheet, formatting it, and emailing it to a dozen stakeholders. It was error-prone, nobody was confident the numbers matched, and the data was already a week old by the time it landed in inboxes.\nI was asked to look into automating it."
+  },
+  {
+    "objectID": "blog/example-post.html#scoping-it-out",
+    "href": "blog/example-post.html#scoping-it-out",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "Scoping it out",
+    "text": "Scoping it out\nThe first step was understanding what the report actually needed to answer — which turned out to be different from what was being calculated. A few stakeholder conversations revealed that most readers only cared about three metrics; the other eighteen columns were rarely looked at.\nI mapped the data lineage in SQL to find the authoritative source tables, then sketched a simpler schema that could drive a live view.\n\n\n\n\n\n\nNote\n\n\n\nI kept a rough data dictionary in a shared doc throughout — this was genuinely useful when handing off to the team later."
+  },
+  {
+    "objectID": "blog/example-post.html#the-build",
+    "href": "blog/example-post.html#the-build",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "The build",
+    "text": "The build\nThe solution ended up being a fairly standard two-layer architecture: a set of SQL views that cleaned and joined the source data, feeding a Tableau workbook connected via a published data source.\n-- Simplified example of the aggregation logic (table/column names changed)\nSELECT\n    week_start,\n    region,\n    COUNT(DISTINCT entity_id)   AS active_count,\n    SUM(metric_value)           AS total_value,\n    AVG(metric_value)           AS avg_value\nFROM cleaned.weekly_activity\nWHERE status = 'active'\nGROUP BY 1, 2\nThe Tableau side was deliberately kept simple — three KPI tiles at the top, one trend line, one breakdown table. I resisted the urge to add more.\n\nWhat the dashboard looked like\nThe screenshot below is blurred to avoid showing company data, but the general layout is visible:\n\n\n\nThe finished dashboard — three KPI tiles and a regional breakdown table.\n\n\nScreenshot blurred. Hover to see layout."
+  },
+  {
+    "objectID": "blog/example-post.html#results",
+    "href": "blog/example-post.html#results",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "Results",
+    "text": "Results\nAfter a two-week parallel-run to verify numbers matched, the Monday morning process was retired. The rough time saving was around 60% — mostly from eliminating the manual pull and the back-and-forth when numbers didn’t match.\nA secondary benefit I didn’t anticipate: stakeholders started checking the dashboard mid-week rather than waiting for the Monday email, which led to a couple of early catches on data issues."
+  },
+  {
+    "objectID": "blog/example-post.html#what-id-do-differently",
+    "href": "blog/example-post.html#what-id-do-differently",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "What I’d do differently",
+    "text": "What I’d do differently\nStart with the data model, not the viz. I built a first version of the Tableau workbook before I’d fully settled the SQL layer, which meant reworking calculated fields twice. The time I spent on that would have been better spent upfront in SQL.\nDocument the refresh schedule explicitly. We had a confusing week where stakeholders thought the data was live when it was actually refreshing once daily. Clearer labelling on the dashboard would have avoided this.\n\nTools used: SQL Server · Tableau Desktop · Tableau Server\nContext: analytics role at a regional retail organisation"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Writing",
+    "section": "",
+    "text": "How We Reduced Reporting Time by 60% with a Tableau Automation\n\n\n\nTableau\n\nSQL\n\nautomation\n\nwork\n\n\n\nReplacing a manual weekly Excel process with a live Tableau dashboard — the problem, the build, and what I learned.\n\n\n\n\n\nNov 15, 2024\n\n3 min\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "projects/example-project.html",
+    "href": "projects/example-project.html",
+    "title": "Project Title Here",
+    "section": "",
+    "text": "Brief context: what was the goal, what data was involved, what did you produce?\nKeep this paragraph to 3–4 sentences. The listing card will pull description: from the YAML above, so this section can go a little deeper."
+  },
+  {
+    "objectID": "projects/example-project.html#overview",
+    "href": "projects/example-project.html#overview",
+    "title": "Project Title Here",
+    "section": "",
+    "text": "Brief context: what was the goal, what data was involved, what did you produce?\nKeep this paragraph to 3–4 sentences. The listing card will pull description: from the YAML above, so this section can go a little deeper."
+  },
+  {
+    "objectID": "projects/example-project.html#data",
+    "href": "projects/example-project.html#data",
+    "title": "Project Title Here",
+    "section": "Data",
+    "text": "Data\nWhere the data came from, rough size/shape, any interesting cleaning steps. If it was a school project with a provided dataset, a one-liner is fine.\nimport pandas as pd\n\ndf = pd.read_csv(\"data/raw.csv\")\nprint(df.shape)   # (12540, 24)\ndf.head()"
+  },
+  {
+    "objectID": "projects/example-project.html#approach",
+    "href": "projects/example-project.html#approach",
+    "title": "Project Title Here",
+    "section": "Approach",
+    "text": "Approach\nWhat method or model did you use and why? This is where you show your thinking — not just what you did but why you chose it over alternatives."
+  },
+  {
+    "objectID": "projects/example-project.html#key-findings",
+    "href": "projects/example-project.html#key-findings",
+    "title": "Project Title Here",
+    "section": "Key findings",
+    "text": "Key findings\nA few bullet points or a short paragraph. Visuals go well here — Quarto renders matplotlib, ggplot, and Plotly outputs natively.\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(8, 4))\n# ... your actual plot code\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "projects/example-project.html#reflections",
+    "href": "projects/example-project.html#reflections",
+    "title": "Project Title Here",
+    "section": "Reflections",
+    "text": "Reflections\nWhat would you do differently? What did you learn that surprised you? This is the paragraph that makes a portfolio project feel real rather than polished-but-hollow.\n\nCode: View on GitHub\nTools: Python · scikit-learn · pandas · matplotlib"
+  },
+  {
+    "objectID": "blog/posts/example-post.html",
+    "href": "blog/posts/example-post.html",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "",
+    "text": "Every Monday morning, one analyst on our team spent roughly three hours pulling numbers from several source systems into a spreadsheet, formatting it, and emailing it to a dozen stakeholders. It was error-prone, nobody was confident the numbers matched, and the data was already a week old by the time it landed in inboxes.\nI was asked to look into automating it."
+  },
+  {
+    "objectID": "blog/posts/example-post.html#the-problem",
+    "href": "blog/posts/example-post.html#the-problem",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "",
+    "text": "Every Monday morning, one analyst on our team spent roughly three hours pulling numbers from several source systems into a spreadsheet, formatting it, and emailing it to a dozen stakeholders. It was error-prone, nobody was confident the numbers matched, and the data was already a week old by the time it landed in inboxes.\nI was asked to look into automating it."
+  },
+  {
+    "objectID": "blog/posts/example-post.html#scoping-it-out",
+    "href": "blog/posts/example-post.html#scoping-it-out",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "Scoping it out",
+    "text": "Scoping it out\nThe first step was understanding what the report actually needed to answer — which turned out to be different from what was being calculated. A few stakeholder conversations revealed that most readers only cared about three metrics; the other eighteen columns were rarely looked at.\nI mapped the data lineage in SQL to find the authoritative source tables, then sketched a simpler schema that could drive a live view.\n\n\n\n\n\n\nNote\n\n\n\nI kept a rough data dictionary in a shared doc throughout — this was genuinely useful when handing off to the team later."
+  },
+  {
+    "objectID": "blog/posts/example-post.html#the-build",
+    "href": "blog/posts/example-post.html#the-build",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "The build",
+    "text": "The build\nThe solution ended up being a fairly standard two-layer architecture: a set of SQL views that cleaned and joined the source data, feeding a Tableau workbook connected via a published data source.\n-- Simplified example of the aggregation logic (table/column names changed)\nSELECT\n    week_start,\n    region,\n    COUNT(DISTINCT entity_id)   AS active_count,\n    SUM(metric_value)           AS total_value,\n    AVG(metric_value)           AS avg_value\nFROM cleaned.weekly_activity\nWHERE status = 'active'\nGROUP BY 1, 2\nThe Tableau side was deliberately kept simple — three KPI tiles at the top, one trend line, one breakdown table. I resisted the urge to add more.\n\nWhat the dashboard looked like\nThe screenshot below is blurred to avoid showing company data, but the general layout is visible:\n\n\n\nThe finished dashboard — three KPI tiles and a regional breakdown table.\n\n\nScreenshot blurred. Hover to see layout."
+  },
+  {
+    "objectID": "blog/posts/example-post.html#results",
+    "href": "blog/posts/example-post.html#results",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "Results",
+    "text": "Results\nAfter a two-week parallel-run to verify numbers matched, the Monday morning process was retired. The rough time saving was around 60% — mostly from eliminating the manual pull and the back-and-forth when numbers didn’t match.\nA secondary benefit I didn’t anticipate: stakeholders started checking the dashboard mid-week rather than waiting for the Monday email, which led to a couple of early catches on data issues."
+  },
+  {
+    "objectID": "blog/posts/example-post.html#what-id-do-differently",
+    "href": "blog/posts/example-post.html#what-id-do-differently",
+    "title": "How We Reduced Reporting Time by 60% with a Tableau Automation",
+    "section": "What I’d do differently",
+    "text": "What I’d do differently\nStart with the data model, not the viz. I built a first version of the Tableau workbook before I’d fully settled the SQL layer, which meant reworking calculated fields twice. The time I spent on that would have been better spent upfront in SQL.\nDocument the refresh schedule explicitly. We had a confusing week where stakeholders thought the data was live when it was actually refreshing once daily. Clearer labelling on the dashboard would have avoided this.\n\nTools used: SQL Server · Tableau Desktop · Tableau Server\nContext: analytics role at a regional retail organisation"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "",
+    "text": "Senior Data Analyst\nCommunity Tech Alliance\nJanuary 2024 – November 2024\n\n\nData Analyst\nCommunity Tech Alliance\nMarch 2022 - January 2024\n\n\nAssistant Data Administrator\nWorking America, AFL-CIO\nAugust 2020 - March 2022\n\n\nData Assistant\nWorking America, AFL-CIO\nAugust 2019 - August 2020"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\n\n\n\n\n\n\n\n\nMaster of Data Science\nUniversity of British Columbia\n2025–present\n\n\nBA, Mathematics & International Affairs\nLewis & Clark College\n2019"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About",
+    "section": "Skills",
+    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost\nProgramming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny"
   }
 ]

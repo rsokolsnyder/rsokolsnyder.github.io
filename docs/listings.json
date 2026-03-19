@@ -1,0 +1,14 @@
+[
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/example-project.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/example-post.html"
+    ]
+  }
+]

@@ -1,0 +1,261 @@
+/*-- scss:defaults --*/
+/*-- custom.scss — Dusty Blue + Lavender palette --*/
+
+/*-- ============================================================
+    COLOUR TOKENS
+    ============================================================ --*/
+$warm-white:    #FFFFFF;   /* page background                   */
+$off-white:     #EAE9F5;   /* subtle surface (cards, code bg)   */
+$charcoal:      #2C2D3F;   /* primary text                      */
+$mid-gray:      #646478;   /* muted / secondary text            */
+$border:        #D8D7E8;   /* dividers, input borders           */
+
+$coral:         #6C63B8;   /* primary accent (lavender purple)  */
+$coral-light:   #E8E7F5;   /* accent tint (badges, highlights)  */
+$coral-dark:    #4E469A;   /* hover / pressed                   */
+
+$teal:          #4A90B8;   /* secondary accent (dusty blue)     */
+$teal-light:    #E0EDF5;   /* blue tint                         */
+
+$amber:         #7B8ABD;   /* tertiary accent (muted periwinkle)*/
+
+/*-- ============================================================
+    2. BOOTSTRAP / QUARTO VARIABLE OVERRIDES
+    ============================================================ --*/
+
+/* Typography */
+$font-family-sans-serif: 'DM Sans', system-ui, sans-serif;
+$headings-font-family:   'DM Serif Display', Georgia, serif;
+$headings-font-weight:   400;   /* Serif display looks best at regular weight */
+$font-size-base:         1rem;
+$line-height-base:       1.75;
+$headings-line-height:   1.2;
+
+/* Colours */
+$body-bg:       $warm-white;
+$body-color:    $charcoal;
+$link-color:    $teal;
+$link-hover-color: $coral;
+
+$primary:       $coral;
+$secondary:     $teal;
+$light:         $off-white;
+$dark:          $charcoal;
+
+/* Navbar */
+$navbar-bg:              $charcoal;
+$navbar-dark-color:      rgba(#F2F2F7, 0.8);
+$navbar-dark-hover-color: #FAF8F4;
+$navbar-dark-active-color: $coral;
+$navbar-dark-brand-color: #FAF8F4;
+
+/* Cards */
+$card-bg:                $warm-white;
+$card-border-color:      $border;
+$card-border-radius:     0.75rem;
+
+/* Code */
+$code-bg:                $off-white;
+$code-color:             $coral-dark;
+$pre-bg:                 $off-white;
+
+/* Misc */
+$border-color:           $border;
+$border-radius:          0.5rem;
+$border-radius-lg:       0.75rem;
+
+/*-- scss:rules --*/
+
+/*-- Google Fonts: DM Sans (body) + DM Serif Display (headings) --*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ---- Page chrome ---- */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  border-bottom: 1px solid rgba($coral, 0.15);
+
+  .navbar-brand {
+    font-family: $headings-font-family;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: color 0.15s ease;
+  }
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+  color: $charcoal;
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.9rem; }
+h3 {
+  font-size: 1.3rem;
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Decorative rule under page title */
+.quarto-title h1::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background: $coral;
+  border-radius: 2px;
+  margin-top: 0.6rem;
+}
+
+/* ---- Links ---- */
+a {
+  text-decoration: none;
+  transition: color 0.15s ease;
+  &:hover { text-decoration: underline; text-decoration-color: rgba($coral, 0.4); }
+}
+
+/* ---- Inline code ---- */
+code:not(pre code) {
+  background: $coral-light;
+  color: $coral-dark;
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.875em;
+}
+
+/* ---- Callout tweaks ---- */
+.callout {
+  border-radius: $border-radius-lg;
+  border-left-width: 4px;
+}
+.callout-note    { border-left-color: $teal; }
+.callout-warning { border-left-color: $amber; }
+.callout-tip     { border-left-color: $coral; }
+
+/* ---- Tables ---- */
+.table {
+  font-size: 0.92rem;
+  thead th {
+    background: $off-white;
+    font-weight: 600;
+    border-bottom: 2px solid $border;
+    color: $mid-gray;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* ---- Project / listing cards ---- */
+.card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid $border;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba($charcoal, 0.10);
+  }
+}
+
+/* Tag / badge pills used on listing pages */
+.listing-category,
+.quarto-category {
+  background: $teal-light  !important;
+  color: $teal             !important;
+  border: none             !important;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25em 0.7em;
+  border-radius: 99px;
+}
+
+/* ---- Hero / banner section (add class="hero" to a div on index.qmd) ---- */
+.hero {
+  padding: 4rem 0 3rem;
+  
+  .hero-title {
+    font-family: $headings-font-family;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    color: $charcoal;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: $mid-gray;
+    max-width: 540px;
+    margin-top: 0.75rem;
+  }
+
+  .hero-accent {
+    color: $coral;
+  }
+}
+
+/* ---- NDA-safe blurred screenshots ---- */
+/*
+  Usage in .qmd:
+    ![Caption](img/screenshot.png){.blurred-screenshot}
+  Or for partial blur with a reveal on hover:
+    ![Caption](img/screenshot.png){.blurred-hover}
+*/
+.blurred-screenshot img,
+img.blurred-screenshot {
+  filter: blur(6px) brightness(0.97);
+  border-radius: $border-radius-lg;
+  border: 1px solid $border;
+  transition: filter 0.3s ease;
+}
+
+.blurred-hover img,
+img.blurred-hover {
+  filter: blur(5px);
+  border-radius: $border-radius-lg;
+  border: 1px solid $border;
+  transition: filter 0.4s ease;
+  cursor: zoom-in;
+
+  &:hover { filter: blur(0px); }
+}
+
+/* Caption under blurred images */
+.blurred-screenshot + p em,
+.blurred-hover + p em {
+  font-size: 0.8rem;
+  color: $mid-gray;
+  display: block;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+/* ---- Footer ---- */
+.nav-footer {
+  background: $off-white;
+  border-top: 1px solid $border;
+  font-size: 0.85rem;
+  color: $mid-gray;
+
+  a { color: $teal; }
+}
+
+/* ---- Back-to-top button ---- */
+#quarto-back-to-top {
+  background: $coral;
+  color: white;
+  border-radius: 99px;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+}
