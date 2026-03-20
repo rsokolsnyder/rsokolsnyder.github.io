@@ -2,8 +2,6 @@
 page-layout: full
 toc: false
 code-tools: false
-open-graph:
-  image: ""
 ---
 
 ::: {.grid}
