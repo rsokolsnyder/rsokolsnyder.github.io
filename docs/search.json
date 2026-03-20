@@ -39,7 +39,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\n\n\nConnecting corporate political donations to anti-democratic legislation\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "projects/washrooms-parks.html",
@@ -208,5 +208,40 @@
     "title": "MarsCast: Weather Patterns from the Red Planet",
     "section": "The Chatbot",
     "text": "The Chatbot\nWe built an AI-powered chatbot using shinychat and the Anthropic API, using Claude as the base model. To improve response quality on domain-specific questions, we implemented Retrieval Augmented Generation (RAG) with a custom document corpus covering the dataset variables, Gale Crater geology, and Curiosity’s mission context. A detailed system prompt controls the bot’s tone and scope, keeping responses focused the dashboard data rather than general trivia. The result is a chatbot that can answer specific questions about the dataset without hallucinating beyond what the data actually shows."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html",
+    "href": "projects/government-accountability-dashboard.html",
+    "title": "Government Accountability Dashboard",
+    "section": "",
+    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#context",
+    "href": "projects/government-accountability-dashboard.html#context",
+    "title": "Government Accountability Dashboard",
+    "section": "",
+    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-data",
+    "href": "projects/government-accountability-dashboard.html#the-data",
+    "title": "Government Accountability Dashboard",
+    "section": "The Data",
+    "text": "The Data\nI integrated political contributions and votes data from the FEC, state financial reports, corporate shareholder information and recorded legislative votes. With data coming from disparate sources, I started with significant cleaning and standardization. Then, using complex SQL queries, I created a stable dashboard table to track the connections between these large donations and the vote outcomes."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-dashboard",
+    "href": "projects/government-accountability-dashboard.html#the-dashboard",
+    "title": "Government Accountability Dashboard",
+    "section": "The Dashboard",
+    "text": "The Dashboard\nI deliberately kept the dashboard simple: 1 page with the ability to filter donations by company, politician and votes. Given the importance of this topic, clarity and credibility mattered more than visual complexity. I additionally included a map to show where these donations had the most impact. Here’s a blurred screenshot to avoid showing any proprietary data but keeping the layout visible."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-impact",
+    "href": "projects/government-accountability-dashboard.html#the-impact",
+    "title": "Government Accountability Dashboard",
+    "section": "The Impact",
+    "text": "The Impact\nUsing the dashboard as a resource, the partner organization published a scorecard holding Fortune 500 companies accountable for their political donations. The resulting scorecard was shared with journalists and advocacy groups to increase public awareness of these companies.\n\nTools: Google BigQuery · SQL · Looker Studio"
   }
 ]
