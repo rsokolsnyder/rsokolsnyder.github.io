@@ -207,14 +207,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-chatbot" class="level2">
 <h2 class="anchored" data-anchor-id="the-chatbot">The Chatbot</h2>
-<p>We built a customized AI-powered Chatbot using <code>shinychat</code> to add additional interactive functionality to our dashboard. Using the Anthropic API we used Claude as a baseline and then implemented Retrieval Augmented Generation (RAG) to further enrich the responses. Using a clear system prompt which guides the bot’s tone and scope alongside documents with more domain-specific information on the dataset variables, information on Gale Crater, and Curiosity’s mission on Mars, we made it easier for the LLM to answer relevant questions from our users without going beyond the scope of our dashboard.</p>
+<p>We built an AI-powered chatbot using shinychat and the Anthropic API, using Claude as the base model. To improve response quality on domain-specific questions, we implemented Retrieval Augmented Generation (RAG) with a custom document corpus covering the dataset variables, Gale Crater geology, and Curiosity’s mission context. A detailed system prompt controls the bot’s tone and scope, keeping responses focused the dashboard data rather than general trivia. The result is a chatbot that can answer specific questions about the dataset without hallucinating beyond what the data actually shows.</p>
 </section>
 <section id="reflections" class="level2">
 <h2 class="anchored" data-anchor-id="reflections">Reflections</h2>
-<p>This project was challenging to implement in a team of 4 but I am overall very proud of the work we did together. Given more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.</p>
+<p>This project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.</p>
+<p>Given more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.</p>
 <hr>
-<p><strong>Code:</strong> <a href="https://github.com/yourusername/repo">View on GitHub</a><br>
-<strong>Tools:</strong> Python · scikit-learn · pandas · matplotlib</p>
+<p><strong>Code:</strong> <a href="https://github.com/UBC-MDS/DSCI-532_2026_14_MarsCast/">View on GitHub</a> <strong>Tools:</strong> Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas <strong>Collaborators:</strong> Eli Gonzalez, Zain Nofal and Sasha Sah</p>
 
 
 </section>

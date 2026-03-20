@@ -25,7 +25,7 @@
     "href": "about.html#skills",
     "title": "About",
     "section": "Skills",
-    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling\nProgramming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
+    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling, computer vision Programming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
   },
   {
     "objectID": "index.html",
@@ -165,7 +165,7 @@
     "href": "projects/mars-dashboard.html#reflections",
     "title": "MarsCast: Weather Patterns from the Red Planet",
     "section": "Reflections",
-    "text": "Reflections\nThis project was challenging to implement in a team of 4 but I am overall very proud of the work we did together. Given more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.\n\nCode: View on GitHub\nTools: Python · scikit-learn · pandas · matplotlib"
+    "text": "Reflections\nThis project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.\nGiven more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.\n\nCode: View on GitHub Tools: Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas Collaborators: Eli Gonzalez, Zain Nofal and Sasha Sah"
   },
   {
     "objectID": "projects/mars-dashboard.html#the-app",
@@ -207,6 +207,6 @@
     "href": "projects/mars-dashboard.html#the-chatbot",
     "title": "MarsCast: Weather Patterns from the Red Planet",
     "section": "The Chatbot",
-    "text": "The Chatbot\nWe built a customized AI-powered Chatbot using shinychat to add additional interactive functionality to our dashboard. Using the Anthropic API we used Claude as a baseline and then implemented Retrieval Augmented Generation (RAG) to further enrich the responses. Using a clear system prompt which guides the bot’s tone and scope alongside documents with more domain-specific information on the dataset variables, information on Gale Crater, and Curiosity’s mission on Mars, we made it easier for the LLM to answer relevant questions from our users without going beyond the scope of our dashboard."
+    "text": "The Chatbot\nWe built an AI-powered chatbot using shinychat and the Anthropic API, using Claude as the base model. To improve response quality on domain-specific questions, we implemented Retrieval Augmented Generation (RAG) with a custom document corpus covering the dataset variables, Gale Crater geology, and Curiosity’s mission context. A detailed system prompt controls the bot’s tone and scope, keeping responses focused the dashboard data rather than general trivia. The result is a chatbot that can answer specific questions about the dataset without hallucinating beyond what the data actually shows."
   }
 ]
