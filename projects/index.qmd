@@ -5,9 +5,9 @@ listing:
   exclude:
     filename: "index.qmd"
   type: grid
-  grid-columns: 2
+  grid-columns: 3
   sort: "date desc"
-  categories: true
+  categories: false
   fields: [image, title, description, categories, date]
   image-height: "200px"
   image-placeholder: "../assets/project-placeholder.png"
