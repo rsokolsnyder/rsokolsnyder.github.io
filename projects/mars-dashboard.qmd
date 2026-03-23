@@ -2,7 +2,7 @@
 title: "MarsCast: Weather Patterns from the Red Planet"
 description: "An interactive Shiny dashboard exploring temperature and pressure trends from NASA's Curiosity rover, with an AI-powered chatbot for querying the data."
 date: 2026-03-17
-categories: [Python, Shiny, RAG, LLM, Anthropic, parquet, dashboard, data-visualization] 
+categories: [Python, Shiny, RAG, LLM, Anthropic, parquet, dashboard, data-visualization, school] 
 image: "../../assets/projects/mars.png"
 ---
 
@@ -31,6 +31,10 @@ The dashboard consists of two pages. The first page lets users filter the data b
 We built an AI-powered chatbot using shinychat and the Anthropic API, using Claude as the base model. To improve response quality on domain-specific questions, we implemented Retrieval Augmented Generation (RAG) with a custom document corpus covering the dataset variables, Gale Crater geology, and Curiosity's mission context.
 A detailed system prompt controls the bot's tone and scope, keeping responses focused the dashboard data rather than general trivia. The result is a chatbot that can answer specific questions about the dataset without hallucinating beyond what the data actually shows.
 
+## Testing
+
+To further ensure reliability of our dashboard, we also implemented testing of both the filtering logic (using `pytest`) and of core UI functionality (using `playwright`).
+
 ## Reflections
 
 This project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.
@@ -39,6 +43,6 @@ Given more time to expand this project, I would like to use some time-series mod
 
 ------------------------------------------------------------------------
 
-**Code:** [View on GitHub](https://github.com/UBC-MDS/DSCI-532_2026_14_MarsCast/)
-**Tools:** Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas
+**Code:** [View on GitHub](https://github.com/UBC-MDS/DSCI-532_2026_14_MarsCast/)  
+**Tools:** Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas  
 **Collaborators:** Eli Gonzalez, Zain Nofal and Sasha Sah

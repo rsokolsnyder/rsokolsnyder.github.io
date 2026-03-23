@@ -25,7 +25,7 @@
     "href": "about.html#skills",
     "title": "About",
     "section": "Skills",
-    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling, computer vision Programming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
+    "text": "Skills\nMachine Learning scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling, computer vision\nProgramming & Data Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management\nVisualization ggplot, Altair, Matplotlib, Looker Studio, Shiny\nCloud & Infrastructure Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github\nStatistical Analysis regression, hypothesis testing, A/B testing, Bayesian & frequentist modelling"
   },
   {
     "objectID": "index.html",
@@ -39,7 +39,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\n\n\nConnecting corporate political donations to anti-democratic legislation\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\nschool\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\nschool\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Membership Report\n\n\n\nLooker Studio\n\nSQL\n\nGoogle Workflows\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nBuilding a unified membership data pipeline and dashboard for a national women’s advocacy organization.\n\n\n\nOct 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nConnecting corporate political donations to anti-democratic legislation\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "projects/washrooms-parks.html",
@@ -165,7 +165,7 @@
     "href": "projects/mars-dashboard.html#reflections",
     "title": "MarsCast: Weather Patterns from the Red Planet",
     "section": "Reflections",
-    "text": "Reflections\nThis project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.\nGiven more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.\n\nCode: View on GitHub Tools: Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas Collaborators: Eli Gonzalez, Zain Nofal and Sasha Sah"
+    "text": "Reflections\nThis project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.\nGiven more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.\n\nCode: View on GitHub\nTools: Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas\nCollaborators: Eli Gonzalez, Zain Nofal and Sasha Sah"
   },
   {
     "objectID": "projects/mars-dashboard.html#the-app",
@@ -243,5 +243,54 @@
     "title": "Government Accountability Dashboard",
     "section": "The Impact",
     "text": "The Impact\nUsing the dashboard as a resource, the partner organization published a scorecard holding Fortune 500 companies accountable for their political donations. The resulting scorecard was shared with journalists and advocacy groups to increase public awareness of these companies.\n\nTools: Google BigQuery · SQL · Looker Studio"
+  },
+  {
+    "objectID": "projects/mars-dashboard.html#testing",
+    "href": "projects/mars-dashboard.html#testing",
+    "title": "MarsCast: Weather Patterns from the Red Planet",
+    "section": "Testing",
+    "text": "Testing\nTo further ensure reliability of our dashboard, we also implemented testing of both the filtering logic (using pytest) and of core UI functionality (using playwright)."
+  },
+  {
+    "objectID": "projects/membership-report.html",
+    "href": "projects/membership-report.html",
+    "title": "Comprehensive Membership Report",
+    "section": "",
+    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-context",
+    "href": "projects/membership-report.html#the-context",
+    "title": "Comprehensive Membership Report",
+    "section": "",
+    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-data",
+    "href": "projects/membership-report.html#the-data",
+    "title": "Comprehensive Membership Report",
+    "section": "The Data",
+    "text": "The Data\nThe journey to a comprehensive membership report started with gathering input from the entire team to understand the full scope of their tools and data sources. For each source, I helped them determine which metrics and actions actually defined what made an individual a member of their organization. From there, I coordinated with the CTA engineering team to build custom ingestion pipelines for 4 priority platforms, ensuring all of their key data landed in the same place.\nFor platforms that didn’t warrant a full pipeline, I set up a Google Workflows automation to ingest additional flat files from a shared Google Drive folder, allowing the team to upload exports directly without engineering involvement. This kept the membership data comprehensive without creating ongoing maintenance burden.\nThis is where the real data standardization challenge began. I started by merging together the lists of members coming from each data source. I chose email as the primary key since it was the only consistent identifier present across all platforms and used many coalesce functions to bring together each member’s info across platforms.\nTABLE members\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     Primary Key\nfirst_name      VARCHAR     \nlast_name       VARCHAR     \nphone           VARCHAR     \nzip_code        VARCHAR     \nstate           VARCHAR\n─────────────────────────────────────────────────────────────────────\nNext, I standardized the membership actions from each platform into a consistent format:\nTABLE actions\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     FK → members.email\naction_date     DATE        Date of member action\nsource          VARCHAR     Platform where action occurred\naction_name     VARCHAR     Specific action that was taken\nmedium          VARCHAR     UTM source code or similar of the action\n─────────────────────────────────────────────────────────────────────\nFinally, I brought the two tables together into a materialized view to power the dashboard itself. I extracted each member’s first and latest action to get reliable join and renewal dates. With fully integrated data on hand, I was ready to design a Membership Dashboard that our partner organization’s team could use to understand their membership and make data-driven decisions about their organizing campaigns."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-dashboard",
+    "href": "projects/membership-report.html#the-dashboard",
+    "title": "Comprehensive Membership Report",
+    "section": "The Dashboard",
+    "text": "The Dashboard\nSince the most pressing need for the organization’s team was having easy access to the true counts of their members, I put these metrics front and center, including both active and inactive members as well as maps showing their geographic distribution. Next I included visualizations and tables showing important information about the membership actions (eg: which actions are most popular, which actions are typically a members’ first, etc)"
+  },
+  {
+    "objectID": "projects/membership-report.html#the-impact",
+    "href": "projects/membership-report.html#the-impact",
+    "title": "Comprehensive Membership Report",
+    "section": "The Impact",
+    "text": "The Impact\n\nTools: Google BigQuery · SQL · Looker Studio · Google Workflows · Acoustic · ActBlue"
+  },
+  {
+    "objectID": "projects/membership-report.html#the-impact-and-dashboard-improvements",
+    "href": "projects/membership-report.html#the-impact-and-dashboard-improvements",
+    "title": "Comprehensive Membership Report",
+    "section": "The Impact and Dashboard Improvements",
+    "text": "The Impact and Dashboard Improvements\nOnce the dashboard went live for the partner organization’s team, the amount of time saved for their digital team was immediately apparent; the team lead said that the dashboard saved them hours of manual work each week. They were able to instead spend their time crafting innovative messaging and designing more effective campaigns. We soon added a note in the corner of the dashboard indicating the date of last refresh of the materialized view allowing viewers to know exactly how fresh the dashboard was.\n\nTools: Google BigQuery · SQL · Looker Studio · Google Workflows"
   }
 ]

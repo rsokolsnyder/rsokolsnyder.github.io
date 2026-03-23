@@ -1,9 +1,9 @@
 ---
 title: "Government Accountability Dashboard"
-description: "Connecting corporate political donations to anti-democratic legislation"
+description: "Connecting corporate political donations to anti-democratic legislation."
 date: 2022-09-01
-categories: [Looker Studio, SQL, BigQuery, data-visualization, dashboard]
-image: "../../assets/projects/accountability-cover-image.png"  # a non-sensitive cover image
+categories: [Looker Studio, SQL, BigQuery, data-visualization, dashboard, work]
+image: "../../assets/projects/accountability-cover-image.png"
 draft: false
 ---
 

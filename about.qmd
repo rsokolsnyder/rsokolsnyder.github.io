@@ -35,7 +35,7 @@ about:
 
 ## Skills
 
-**Machine Learning** scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling, computer vision 
+**Machine Learning** scikit-learn, PyTorch, XGBoost, spaCy | supervised & unsupervised learning, model evaluation, natural language processing, time-series forecasting, geospatial modelling, computer vision  
 **Programming & Data** Python (Pandas, NumPy), R, SQL, dbt, MongoDB | OOP, database management   
 **Visualization** ggplot, Altair, Matplotlib, Looker Studio, Shiny  
 **Cloud & Infrastructure** Google Cloud Platform (BigQuery, Workflows, Looker), AWS, Docker, Github  

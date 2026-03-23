@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-17">
-<meta name="description" content="An interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.">
+<meta name="dcterms.date" content="2022-10-15">
+<meta name="description" content="Building a unified membership data pipeline and dashboard for a national women’s advocacy organization.">
 
-<title>MarsCast: Weather Patterns from the Red Planet – Rebecca Sokol-Snyder</title>
+<title>Comprehensive Membership Report – Rebecca Sokol-Snyder</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Rebecca Sokol-Snyder — Data Science Portfolio">
 <meta property="og:description" content="Projects and writing on data science, analytics, and visualisation.">
-<meta property="og:image" content="../../assets/projects/mars.png">
+<meta property="og:image" content="../../assets/projects/membership-cover-image.png">
 <meta property="og:site_name" content="Rebecca Sokol-Snyder">
 </head>
 
@@ -136,13 +136,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-context" id="toc-the-context" class="nav-link active" data-scroll-target="#the-context">The Context</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#performance-and-storage" id="toc-performance-and-storage" class="nav-link" data-scroll-target="#performance-and-storage">Performance and Storage</a></li>
   <li><a href="#the-dashboard" id="toc-the-dashboard" class="nav-link" data-scroll-target="#the-dashboard">The Dashboard</a></li>
-  <li><a href="#the-chatbot" id="toc-the-chatbot" class="nav-link" data-scroll-target="#the-chatbot">The Chatbot</a></li>
-  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
-  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections">Reflections</a></li>
+  <li><a href="#the-impact-and-dashboard-improvements" id="toc-the-impact-and-dashboard-improvements" class="nav-link" data-scroll-target="#the-impact-and-dashboard-improvements">The Impact and Dashboard Improvements</a></li>
   </ul>
 </nav>
     </div>
@@ -151,23 +148,21 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MarsCast: Weather Patterns from the Red Planet</h1>
+<h1 class="title">Comprehensive Membership Report</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Python</div>
-    <div class="quarto-category">Shiny</div>
-    <div class="quarto-category">RAG</div>
-    <div class="quarto-category">LLM</div>
-    <div class="quarto-category">Anthropic</div>
-    <div class="quarto-category">parquet</div>
-    <div class="quarto-category">dashboard</div>
+    <div class="quarto-category">Looker Studio</div>
+    <div class="quarto-category">SQL</div>
+    <div class="quarto-category">Google Workflows</div>
+    <div class="quarto-category">BigQuery</div>
     <div class="quarto-category">data-visualization</div>
-    <div class="quarto-category">school</div>
+    <div class="quarto-category">dashboard</div>
+    <div class="quarto-category">work</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    An interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.
+    Building a unified membership data pipeline and dashboard for a national women’s advocacy organization.
   </div>
 </div>
 
@@ -178,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 17, 2026</p>
+      <p class="date">October 15, 2022</p>
     </div>
   </div>
   
@@ -190,39 +185,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Using data collected by the NASA Curiosity Rover between 2012 and 2018, we built an interactive dashboard to explore what six years of Martian weather data reveals about surface conditions on the Red Planet.</p>
+<section id="the-context" class="level2">
+<h2 class="anchored" data-anchor-id="the-context">The Context</h2>
+<p>A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance.</p>
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
-<p>The dataset contains 1,895 weather observations collected directly from the surface of Mars, covering the period from Sol 1 (August 7, 2012 on Earth) to Sol 1895 (February 27, 2018 on Earth). Each observation includes information on the terrestrial date, number of martian days since Curiosity landed, solar longitude, martian month, minimum temperature, maximum temperature, and air pressure.</p>
-</section>
-<section id="performance-and-storage" class="level2">
-<h2 class="anchored" data-anchor-id="performance-and-storage">Performance and Storage</h2>
-<p>In order to improve app performance, we converted the source data from CSV to parquet and implemented lazy loading. In the context of the Shiny app, this meant that rather than loading the entire dataset into memory and then applying filters, the app was able to only actually load data matching the selected filters. Despite our relatively small dataset, we noticed that this sped up the dashboard’s ability to change displays with the filters. This change also lends itself to the app’s future scalability. If we expanded the scope of the dashboard to include data collected over a longer time period and by other Mars rovers, this change would make an even greater difference.</p>
+<p>The journey to a comprehensive membership report started with gathering input from the entire team to understand the full scope of their tools and data sources. For each source, I helped them determine which metrics and actions actually defined what made an individual a member of their organization. From there, I coordinated with the CTA engineering team to build custom ingestion pipelines for 4 priority platforms, ensuring all of their key data landed in the same place.</p>
+<p>For platforms that didn’t warrant a full pipeline, I set up a Google Workflows automation to ingest additional flat files from a shared Google Drive folder, allowing the team to upload exports directly without engineering involvement. This kept the membership data comprehensive without creating ongoing maintenance burden.</p>
+<p>This is where the real data standardization challenge began. I started by merging together the lists of members coming from each data source. I chose email as the primary key since it was the only consistent identifier present across all platforms and used many <code>coalesce</code> functions to bring together each member’s info across platforms.</p>
+<pre><code>TABLE members
+─────────────────────────────────────────────────────────────────────
+email           VARCHAR     Primary Key
+first_name      VARCHAR     
+last_name       VARCHAR     
+phone           VARCHAR     
+zip_code        VARCHAR     
+state           VARCHAR
+─────────────────────────────────────────────────────────────────────</code></pre>
+<p>Next, I standardized the membership actions from each platform into a consistent format:</p>
+<pre><code>TABLE actions
+─────────────────────────────────────────────────────────────────────
+email           VARCHAR     FK → members.email
+action_date     DATE        Date of member action
+source          VARCHAR     Platform where action occurred
+action_name     VARCHAR     Specific action that was taken
+medium          VARCHAR     UTM source code or similar of the action
+─────────────────────────────────────────────────────────────────────</code></pre>
+<p>Finally, I brought the two tables together into a materialized view to power the dashboard itself. I extracted each member’s first and latest action to get reliable join and renewal dates. With fully integrated data on hand, I was ready to design a Membership Dashboard that our partner organization’s team could use to understand their membership and make data-driven decisions about their organizing campaigns.</p>
 </section>
 <section id="the-dashboard" class="level2">
 <h2 class="anchored" data-anchor-id="the-dashboard">The Dashboard</h2>
-<p>The dashboard consists of two pages. The first page lets users filter the data by month and season to explore the relationships between temperature and air pressure as well as the changes in air pressure and temperature over time. The second page hosts the AI Chatbot.</p>
-<p><img src="../assets/projects/mars-dashboard-screenshot.png" class="img-fluid" style="border-radius: 0.75rem; border: 1px solid #D8D7E8; width: 100%;"> <a href="https://019c9d15-df54-9f49-50d4-2e3049587ef1.share.connect.posit.cloud/" class="btn btn-primary" style="margin-top: 1rem;">Launch live dashboard →</a></p>
+<p>Since the most pressing need for the organization’s team was having easy access to the true counts of their members, I put these metrics front and center, including both active and inactive members as well as maps showing their geographic distribution. Next I included visualizations and tables showing important information about the membership actions (eg: which actions are most popular, which actions are typically a members’ first, etc)</p>
+<p><img src="../assets/projects/membership-report.png" class="blurred-screenshot img-fluid"></p>
 </section>
-<section id="the-chatbot" class="level2">
-<h2 class="anchored" data-anchor-id="the-chatbot">The Chatbot</h2>
-<p>We built an AI-powered chatbot using shinychat and the Anthropic API, using Claude as the base model. To improve response quality on domain-specific questions, we implemented Retrieval Augmented Generation (RAG) with a custom document corpus covering the dataset variables, Gale Crater geology, and Curiosity’s mission context. A detailed system prompt controls the bot’s tone and scope, keeping responses focused the dashboard data rather than general trivia. The result is a chatbot that can answer specific questions about the dataset without hallucinating beyond what the data actually shows.</p>
-</section>
-<section id="testing" class="level2">
-<h2 class="anchored" data-anchor-id="testing">Testing</h2>
-<p>To further ensure reliability of our dashboard, we also implemented testing of both the filtering logic (using <code>pytest</code>) and of core UI functionality (using <code>playwright</code>).</p>
-</section>
-<section id="reflections" class="level2">
-<h2 class="anchored" data-anchor-id="reflections">Reflections</h2>
-<p>This project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.</p>
-<p>Given more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.</p>
+<section id="the-impact-and-dashboard-improvements" class="level2">
+<h2 class="anchored" data-anchor-id="the-impact-and-dashboard-improvements">The Impact and Dashboard Improvements</h2>
+<p>Once the dashboard went live for the partner organization’s team, the amount of time saved for their digital team was immediately apparent; the team lead said that the dashboard saved them hours of manual work each week. They were able to instead spend their time crafting innovative messaging and designing more effective campaigns. We soon added a note in the corner of the dashboard indicating the date of last refresh of the materialized view allowing viewers to know exactly how fresh the dashboard was.</p>
 <hr>
-<p><strong>Code:</strong> <a href="https://github.com/UBC-MDS/DSCI-532_2026_14_MarsCast/">View on GitHub</a><br>
-<strong>Tools:</strong> Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas<br>
-<strong>Collaborators:</strong> Eli Gonzalez, Zain Nofal and Sasha Sah</p>
+<p><strong>Tools</strong>: Google BigQuery · SQL · Looker Studio · Google Workflows</p>
 
 
 </section>

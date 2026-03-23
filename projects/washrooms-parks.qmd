@@ -2,7 +2,7 @@
 title: "Washrooms in Vancouver Public Parks"
 description: "A binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data."
 date: 2025-12-13
-categories: [Python, machine-learning, classification, Docker, Pandera, data-validation, reproducibility, open-data]
+categories: [Python, machine-learning, classification, Docker, Pandera, data-validation, reproducibility, open-data, school]
 image: "../../assets/projects/parks.jpg"
 ---
 
