@@ -7,6 +7,7 @@ website:
   title: "Rebecca Sokol-Snyder"        
   description: "Data scientist working across Python, R, and SQL."
   favicon: assets/favicon.ico
+  google-analytics: 'G-SQD1XHW0DQ'
 
   navbar:
     left:
