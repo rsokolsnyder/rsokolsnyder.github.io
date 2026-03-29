@@ -60,7 +60,7 @@
     "href": "projects/digital-engagement.html#the-dashboard",
     "title": "Digital Engagement Dashboard",
     "section": "The Dashboard",
-    "text": "The Dashboard\nThe other CTA analyst on this project and I built a multi-page dashboard to give the organizations team a single place where they could go to access information across all their tools. The homepage provided priority KPIs for each platform followed by individual dashboard pages for each platform to dig deeper into engagement through each. We ensured consistent style across the dashboard and used the same visualization types for similar metrics for each platform. Below is a screenshot of one of the dashboard pages that I owned.\n ## The Impact\nBecause of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections."
+    "text": "The Dashboard\nThe other CTA analyst on this project and I built a multi-page dashboard to give the organizations team a single place where they could go to access information across all their tools. The homepage provided priority KPIs for each platform followed by individual dashboard pages for each platform to dig deeper into engagement through each. We ensured consistent style across the dashboard and used the same visualization types for similar metrics for each platform. Below is a screenshot of one of the dashboard pages that I owned."
   },
   {
     "objectID": "projects/digital-engagement.html#reflection",
@@ -250,5 +250,12 @@
     "title": "Writing",
     "section": "",
     "text": "Understanding political bias and information transparency in the age of AI\n\n\n\nnews\n\nanalysis\n\nbias\n\npolitics\n\nLLM\n\nAI\n\n\n\n\n\n\n\n\n\nJan 14, 2026\n\n6 min\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "projects/digital-engagement.html#the-impact",
+    "href": "projects/digital-engagement.html#the-impact",
+    "title": "Digital Engagement Dashboard",
+    "section": "The Impact",
+    "text": "The Impact\nBecause of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections."
   }
 ]
