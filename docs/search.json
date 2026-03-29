@@ -35,116 +35,39 @@
     "text": "In the current polarized political landscape, the average person is having a harder and harder time accessing fair and unbiased news sources. At the same time, with the proliferation of AI agents and LLMs people are increasingly turning to these entities rather than traditional search engines as sources of information. While there has been extensive policymaking and normsetting in traditional news media around mitigating bias, efforts to evaluate political bias in AI have failed to root themselves in the current state of the world, instead focusing too much on theoretical ideals abstracted from reality.\n\nWhat is AI?\nBefore I dig deeply into the concept of bias, political bias more specifically, and most importantly how it manifests in the world of AI, I think it’s important to really define what I mean when I say ‘AI’ and ‘LLM’. In the broadest sense artificial intelligence (AI) refers to the goal of making computers perform tasks that typically and have historically required human input. I heard an excellent quote from Karen Hao on the Intercept Podcast where she likened the term AI to the term Transportation. Transportation is an incredibly broad term that refers to anything from a bicycle to a rocket ship. Likewise, AI can refer to a huge range of technologies. The important concept to understand is that AI and Machine Learning models use a variety of algorithms to learn patterns from the data they are given rather than having those patterns explicitly programmed. Machine Learning has existed since the 60s/70s but in the last 5ish years the use of AI in our everyday lives has really taken off. Specifically, one kind of AI, called Large Language Models (LLMs) – like ChatGPT, Claude or Gemini – have come to the forefront. These models are incredibly complex and have been trained on HUGE amounts of data to be able to carry out what can seem like a human conversation. As these models become more and more accessible to the average person, we need to consider the impacts that they are having in terms of how people interact with them, other people, and society.\n\n\nWhat do we mean when we say bias?\nIn Machine Learning, bias is defined as the level to which a model is too simple to pick up true patterns from data. This is a pretty abstract definition so it can be helpful to think of the following interpretation: bias occurs when algorithms or models give higher weights or representation to some aspects of a dataset than others, resulting in skewed outcomes and lower accuracy in predictions. When applied to LLMs, bias is often thought of as the overrepresentation of one side of an argument/issue than the other in the models’ responses to users prompts. (Prompt is the word used in Machine Learning to refer to the text input that a person gives to an AI model.)\nThis definition of bias becomes problematic when it gets applied to social contexts such as politics. Most of the literature on political bias of LLMs has found that most of the widely used models present a left-leaning political bias. However, these papers generally rely on the machine learning definition of bias, often defining political bias in this context as repeated expression of viewpoints that are away from some predefined political ‘center’. These papers further rely on political alignment tests, like the Political Compass Test, which were designed for people to determine where they themselves fall on the political spectrum, measuring LLMs responses and categorizing their alignment with various political views. In practice, this means that these papers define political neutrality as an equal representation of (lower d) democratic viewpoints and those expressed by right-wing authoritarians in model responses, implicitly framing this exact equal representation as what the developers of these models should be aiming for. \n\n\nWhy should we be wary of this definition?\nThe problem with this goal of pure political neutrality is that we do not have real examples of this existing in the world. Additionally, it presupposes that all viewpoints are based on the same reliable facts or ‘truth’ from which different opinions are formed. In reality, we know that access to different information and different definitions of the ‘truth’ are some of the key bases for today’s increased polarization. Alternatively, in the paper I am co-authoring alongside researchers from UBC, King’s College London, and the University of Amsterdam, we argue that exclusively measuring the outputs of Large Language models means relying too heavily on the ideal of some true neutral center. \n\n\nSo, what is the alternative? \nWe instead conceptualize political neutrality (and in turn bias) as clear transparency of data sources and the inclusion of accurate true information. This aligns with norms used in journalism and media when the goal is to provide accurate and factual information to readers and viewers. In our paper, we aim to analyze political bias in LLMs by examining the intermediary queries and URLs returned by ChatGPT in web search mode when responding to a series of politically charged prompts about leading figures in the US, UK, and Europe. We also asked ChatGPT to evaluate the sources that it used and to provide an evaluation of whether sources were trustworthy or not. \nWeb Search mode allows the model to perform actual searches on the internet to retrieve information to answer the user’s query rather than relying exclusively on the data that was originally used to train the model. This means that behind the scenes, when someone poses a question to ChatGPT, it constructs actual search queries, finds resources, “reads” them, and reconstructs additional queries until the model decides that it has gathered enough information to answer the user’s prompt. As an aside, ChatGPT is able to do this all very quickly using huge amounts of computing power, with important environmental considerations that are outside the scope of this particular blog.\nIn broad strokes, we found that while some sources like Wikipedia were repeatedly accessed during the search they were rarely cited in the final response and categorized as untrustworthy the majority of the time. Additionally, some news sites were consistently described as credible but with some bias. The consistency in the source categorizations across repetitions indicate some mechanism or input that was introduced during the training of ChatGPT about which sources are considered reliable. This ‘shadow’ mechanism is important when we consider that people may be using tools like ChatGPT to gain information and gain understanding of the political landscape. In fact, this ingrained sense of source credibility in the model is its own form of bias. As AI use continues to spread, we advise further research into these hidden controls in LLMs and encourage increased regulations for the transparency of how these models have been trained. \n\n\n\n\n Back to top"
   },
   {
-    "objectID": "projects/washrooms-parks.html",
-    "href": "projects/washrooms-parks.html",
-    "title": "Washrooms in Vancouver Public Parks",
+    "objectID": "projects/digital-engagement.html",
+    "href": "projects/digital-engagement.html",
+    "title": "Digital Engagement Dashboard",
     "section": "",
-    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
+    "text": "A climate organizing nonprofit approached CTA with a big ask. They wanted a comprehensive view of their digital presence across email, sms, and social media. Their staff were each experts in their own domain but when it came to having a holistic view and being able to report back to senior organizational leadership, they were having to spend time coordinating to answer simple questions."
   },
   {
-    "objectID": "projects/washrooms-parks.html#the-question",
-    "href": "projects/washrooms-parks.html#the-question",
-    "title": "Washrooms in Vancouver Public Parks",
+    "objectID": "projects/digital-engagement.html#context",
+    "href": "projects/digital-engagement.html#context",
+    "title": "Digital Engagement Dashboard",
     "section": "",
-    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
+    "text": "A climate organizing nonprofit approached CTA with a big ask. They wanted a comprehensive view of their digital presence across email, sms, and social media. Their staff were each experts in their own domain but when it came to having a holistic view and being able to report back to senior organizational leadership, they were having to spend time coordinating to answer simple questions."
   },
   {
-    "objectID": "projects/washrooms-parks.html#the-pipeline",
-    "href": "projects/washrooms-parks.html#the-pipeline",
-    "title": "Washrooms in Vancouver Public Parks",
-    "section": "The Pipeline",
-    "text": "The Pipeline\nBefore getting to predictive modelling, we built a data validation pipeline using Pandera to enforce schema constraints on the input data. This included checks for missingness, expected data types, and valid category levels. By building data checks in at the ingestion stage, we were able to prevent data issues downstream and making our overall pipeline more robust."
-  },
-  {
-    "objectID": "projects/washrooms-parks.html#reproducibility",
-    "href": "projects/washrooms-parks.html#reproducibility",
-    "title": "Washrooms in Vancouver Public Parks",
-    "section": "Reproducibility",
-    "text": "Reproducibility\nTo ensure that our analysis could be run again and again producing the same results, we spun up a Docker container with stable python versioning and pinned versions of each of our packages. We additionally, included a docker-compose.yml file which is automatically updated with the latest version of the container using a GitHub Action workflow. This had the added benefit for us to collaborate more easily with fewer conflicts as we built out our model, making sure we were all coding in the same exact environment. Furthermore, we wrote a Makefile to allow the entire analysis to run with only one command. To run the analysis yourself, clone the repository and follow the setup instructions in the README; the entire pipeline can be run with a single make all command."
-  },
-  {
-    "objectID": "projects/washrooms-parks.html#the-model-and-findings",
-    "href": "projects/washrooms-parks.html#the-model-and-findings",
-    "title": "Washrooms in Vancouver Public Parks",
-    "section": "The Model and Findings",
-    "text": "The Model and Findings\nWe compared the performance of a k-nearest neighbors (k-nn) algorithm and a Support Vector Machine with Radial Basis Function (SVM RBF) algorithm against a baseline to build a binary classification model predicting the existence of a washroom in each park. We included neighbourhood name, park size (hectare), whether the park is official, whether there are any advisories, whether there are additional facilities and whether the park has special features to fit the model. While neither model was able to substantially improve on the baseline, this was informative in and of itself, suggesting that washroom presence is more a function of historical infrastructure decisions or other neighborhood characteristics that were not included in the dataset we used. However, we did find that park size and the presence of other amenities were stronger signals than the other features in predicting the presence of washrooms, supporting our initial intuition that washrooms would be associated with larger, more developed parks.\n\nReport: View the rendered Report\nCode: View on GitHub\nTools: Python · scikit-learn · Pandera · Docker · matplotlib\nCollaborators: William Song and Chung Ki (Harry) Yau"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\nschool\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\nschool\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Membership Report\n\n\n\nLooker Studio\n\nSQL\n\nGoogle Workflows\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nBuilding a unified membership data pipeline and dashboard for a national women’s advocacy organization.\n\n\n\nOct 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nConnecting corporate political donations to anti-democratic legislation.\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
-  },
-  {
-    "objectID": "projects/government-accountability-dashboard.html",
-    "href": "projects/government-accountability-dashboard.html",
-    "title": "Government Accountability Dashboard",
-    "section": "",
-    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
-  },
-  {
-    "objectID": "projects/government-accountability-dashboard.html#context",
-    "href": "projects/government-accountability-dashboard.html#context",
-    "title": "Government Accountability Dashboard",
-    "section": "",
-    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
-  },
-  {
-    "objectID": "projects/government-accountability-dashboard.html#the-data",
-    "href": "projects/government-accountability-dashboard.html#the-data",
-    "title": "Government Accountability Dashboard",
+    "objectID": "projects/digital-engagement.html#the-data",
+    "href": "projects/digital-engagement.html#the-data",
+    "title": "Digital Engagement Dashboard",
     "section": "The Data",
-    "text": "The Data\nI integrated political contributions and votes data from the FEC, state financial reports, corporate shareholder information and recorded legislative votes. With data coming from disparate sources, I started with significant cleaning and standardization. Then, using complex SQL queries, I created a stable dashboard table to track the connections between these large donations and the vote outcomes."
+    "text": "The Data\nTheir digital work happened across 5 key platforms: Google Analytics on multiple websites, a social media management tool covering their presence on Facebook, Instagram, Twitter, and TikTok, email via Action Network, text via Mobile Commons, and another platform managing shareable action toolkits. I took a lead role coordinating with our engineering team to build data ingestion pipelines for each of their tools, bringing their data together reliably in one centralized database. Next, another analyst and I split the sources to develop full dashboard pages for each of their priority platforms in the same dashboard.\nUsing SQL mirror connections for both their email and text platforms, I set to pulling out the key metrics and data fields needed to track subscribers over time and the particular messages that most drove engagement. One thing that was difficult in this work was that they had been using the same email tool for years, meaning they had a large volume of data. In particular their platform tracked each send, open, click, and reply as actions in the same table. When the table reached a certain size, they simply added another table: email_activities_1, email_activities_2, etc. This was both a challenge for our engineers and myself ensuring that the complete pipeline, from ingestion to analysis, was robust enough to handle the new tables when they were created.\nFor my first attempt, I wrote a complicated query with many UNION ALL statements combining each table with a Cloud Logging notification for myself to update the query when a new table appeared in the dataset. This solution worked but would require ongoing maintenance from either myself or a future analyst. As a second iteration, I looked to take advantage of the consistent table naming through wildcard syntax. Luckily, the way that our sync worked, each table was truly a table rather than a view or materialized view. As such, I was able to write a fairly simple query that was reliable and would stand the test of time:\nWITH activities AS (\n  SELECT *\n  FROM `&lt;bigquery_project_id&gt;.&lt;dataset&gt;.email_activities_*`\n)\nSELECT ..."
   },
   {
-    "objectID": "projects/government-accountability-dashboard.html#the-dashboard",
-    "href": "projects/government-accountability-dashboard.html#the-dashboard",
-    "title": "Government Accountability Dashboard",
+    "objectID": "projects/digital-engagement.html#the-dashboard",
+    "href": "projects/digital-engagement.html#the-dashboard",
+    "title": "Digital Engagement Dashboard",
     "section": "The Dashboard",
-    "text": "The Dashboard\nI deliberately kept the dashboard simple: 1 page with the ability to filter donations by company, politician and votes. Given the importance of this topic, clarity and credibility mattered more than visual complexity. I additionally included a map to show where these donations had the most impact. Here’s a blurred screenshot to avoid showing any proprietary data but keeping the layout visible."
+    "text": "The Dashboard\nThe other CTA analyst on this project and I built a multi-page dashboard to give the organizations team a single place where they could go to access information across all their tools. The homepage provided priority KPIs for each platform followed by individual dashboard pages for each platform to dig deeper into engagement through each. We ensured consistent style across the dashboard and used the same visualization types for similar metrics for each platform. Below is a screenshot of one of the dashboard pages that I owned.\n ## The Impact\nBecause of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections."
   },
   {
-    "objectID": "projects/government-accountability-dashboard.html#the-impact",
-    "href": "projects/government-accountability-dashboard.html#the-impact",
-    "title": "Government Accountability Dashboard",
-    "section": "The Impact",
-    "text": "The Impact\nUsing the dashboard as a resource, the partner organization published a scorecard holding Fortune 500 companies accountable for their political donations. The resulting scorecard was shared with journalists and advocacy groups to increase public awareness of these companies.\n\nTools: Google BigQuery · SQL · Looker Studio"
-  },
-  {
-    "objectID": "projects/membership-report.html",
-    "href": "projects/membership-report.html",
-    "title": "Comprehensive Membership Report",
-    "section": "",
-    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
-  },
-  {
-    "objectID": "projects/membership-report.html#the-context",
-    "href": "projects/membership-report.html#the-context",
-    "title": "Comprehensive Membership Report",
-    "section": "",
-    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
-  },
-  {
-    "objectID": "projects/membership-report.html#the-data",
-    "href": "projects/membership-report.html#the-data",
-    "title": "Comprehensive Membership Report",
-    "section": "The Data",
-    "text": "The Data\nThe journey to a comprehensive membership report started with gathering input from the entire team to understand the full scope of their tools and data sources. For each source, I helped them determine which metrics and actions actually defined what made an individual a member of their organization. From there, I coordinated with the CTA engineering team to build custom ingestion pipelines for 4 priority platforms, ensuring all of their key data landed in the same place.\nFor platforms that didn’t warrant a full pipeline, I set up a Google Workflows automation to ingest additional flat files from a shared Google Drive folder, allowing the team to upload exports directly without engineering involvement. This kept the membership data comprehensive without creating ongoing maintenance burden.\nThis is where the real data standardization challenge began. I started by merging together the lists of members coming from each data source. I chose email as the primary key since it was the only consistent identifier present across all platforms and used many coalesce functions to bring together each member’s info across platforms.\nTABLE members\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     Primary Key\nfirst_name      VARCHAR     \nlast_name       VARCHAR     \nphone           VARCHAR     \nzip_code        VARCHAR     \nstate           VARCHAR\n─────────────────────────────────────────────────────────────────────\nNext, I standardized the membership actions from each platform into a consistent format:\nTABLE actions\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     FK → members.email\naction_date     DATE        Date of member action\nsource          VARCHAR     Platform where action occurred\naction_name     VARCHAR     Specific action that was taken\nmedium          VARCHAR     UTM source code or similar of the action\n─────────────────────────────────────────────────────────────────────\nFinally, I brought the two tables together into a materialized view to power the dashboard itself. I extracted each member’s first and latest action to get reliable join and renewal dates. With fully integrated data on hand, I was ready to design a Membership Dashboard that our partner organization’s team could use to understand their membership and make data-driven decisions about their organizing campaigns."
-  },
-  {
-    "objectID": "projects/membership-report.html#the-dashboard",
-    "href": "projects/membership-report.html#the-dashboard",
-    "title": "Comprehensive Membership Report",
-    "section": "The Dashboard",
-    "text": "The Dashboard\nSince the most pressing need for the organization’s team was having easy access to the true counts of their members, I put these metrics front and center, including both active and inactive members as well as maps showing their geographic distribution. Next I included visualizations and tables showing important information about the membership actions (eg: which actions are most popular, which actions are typically a members’ first, etc)"
-  },
-  {
-    "objectID": "projects/membership-report.html#the-impact-and-dashboard-improvements",
-    "href": "projects/membership-report.html#the-impact-and-dashboard-improvements",
-    "title": "Comprehensive Membership Report",
-    "section": "The Impact and Dashboard Improvements",
-    "text": "The Impact and Dashboard Improvements\nOnce the dashboard went live for the partner organization’s team, the amount of time saved for their digital team was immediately apparent; the team lead said that the dashboard saved them hours of manual work each week. They were able to instead spend their time crafting innovative messaging and designing more effective campaigns. We soon added a note in the corner of the dashboard indicating the date of last refresh of the materialized view allowing viewers to know exactly how fresh the dashboard was.\n\nTools: Google BigQuery · SQL · Looker Studio · Google Workflows"
+    "objectID": "projects/digital-engagement.html#reflection",
+    "href": "projects/digital-engagement.html#reflection",
+    "title": "Digital Engagement Dashboard",
+    "section": "Reflection",
+    "text": "Reflection\nThis was one of the more complex engagements I worked on at CTA. With data ingestion from 5 different platforms, several of which were new for our engineering team, plus close collaboration with another analyst, keeping everything consistent required more coordination than a typical solo project. Because the organization wanted both a deeper understanding of each platform specifically as well as the overall view of their program, we were able to begin analysis for the dashboard of data from some platforms before the pipelines for others had been completed. As I noted earlier, the other analyst and I were able to split the work so each of us led the analysis for different platforms. We were then able to offer each other regular feedback and reviews to make sure things were cohesive between code and visualization styles.\n\nTools: Google BigQuery · SQL · Looker Studio · Google Analytics · Action Network · MobileCommons · Sprout Social"
   },
   {
     "objectID": "projects/mars-dashboard.html",
@@ -201,6 +124,118 @@
     "title": "MarsCast: Weather Patterns from the Red Planet",
     "section": "Reflections",
     "text": "Reflections\nThis project was challenging to implement in a team of 4. Since the bulk of work occurred in a single python script, we had to stagger work in order to avoid difficult merge conflicts and ensure continuity of code style. As the project progressed, we got better at splitting the work so that it could happen in parallel. My core contributions were converting the data pipeline to parquet and implementing lazy loading for performance, as well as ensuring the RAG pipeline integrated into the rest of our codebase without conflict.\nGiven more time to expand this project, I would like to use some time-series modelling techniques to better analyze the temperature and air pressure patterns. Additionally, it would be cool to use Shiny’s interactivity to build a page where you can choose different model parameters and see how the predictions change as a result.\n\nCode: View on GitHub\nTools: Python · Shiny for Python · shinychat · Anthropic API · RAG · parquet · pandas\nCollaborators: Eli Gonzalez, Zain Nofal and Sasha Sah"
+  },
+  {
+    "objectID": "projects/membership-report.html",
+    "href": "projects/membership-report.html",
+    "title": "Comprehensive Membership Report",
+    "section": "",
+    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-context",
+    "href": "projects/membership-report.html#the-context",
+    "title": "Comprehensive Membership Report",
+    "section": "",
+    "text": "A national women’s advocacy organization came to Community Tech Alliance with a problem. Their digital team was spending hours each week pulling lists of their members from some platforms and uploading them into others. They didn’t have a single holistic view of their membership, that they could use to actually analyze the data and make decisions about program performance."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-data",
+    "href": "projects/membership-report.html#the-data",
+    "title": "Comprehensive Membership Report",
+    "section": "The Data",
+    "text": "The Data\nThe journey to a comprehensive membership report started with gathering input from the entire team to understand the full scope of their tools and data sources. For each source, I helped them determine which metrics and actions actually defined what made an individual a member of their organization. From there, I coordinated with the CTA engineering team to build custom ingestion pipelines for 4 priority platforms, ensuring all of their key data landed in the same place.\nFor platforms that didn’t warrant a full pipeline, I set up a Google Workflows automation to ingest additional flat files from a shared Google Drive folder, allowing the team to upload exports directly without engineering involvement. This kept the membership data comprehensive without creating ongoing maintenance burden.\nThis is where the real data standardization challenge began. I started by merging together the lists of members coming from each data source. I chose email as the primary key since it was the only consistent identifier present across all platforms and used many coalesce functions to bring together each member’s info across platforms.\nTABLE members\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     Primary Key\nfirst_name      VARCHAR     \nlast_name       VARCHAR     \nphone           VARCHAR     \nzip_code        VARCHAR     \nstate           VARCHAR\n─────────────────────────────────────────────────────────────────────\nNext, I standardized the membership actions from each platform into a consistent format:\nTABLE actions\n─────────────────────────────────────────────────────────────────────\nemail           VARCHAR     FK → members.email\naction_date     DATE        Date of member action\nsource          VARCHAR     Platform where action occurred\naction_name     VARCHAR     Specific action that was taken\nmedium          VARCHAR     UTM source code or similar of the action\n─────────────────────────────────────────────────────────────────────\nFinally, I brought the two tables together into a materialized view to power the dashboard itself. I extracted each member’s first and latest action to get reliable join and renewal dates. With fully integrated data on hand, I was ready to design a Membership Dashboard that our partner organization’s team could use to understand their membership and make data-driven decisions about their organizing campaigns."
+  },
+  {
+    "objectID": "projects/membership-report.html#the-dashboard",
+    "href": "projects/membership-report.html#the-dashboard",
+    "title": "Comprehensive Membership Report",
+    "section": "The Dashboard",
+    "text": "The Dashboard\nSince the most pressing need for the organization’s team was having easy access to the true counts of their members, I put these metrics front and center, including both active and inactive members as well as maps showing their geographic distribution. Next I included visualizations and tables showing important information about the membership actions (eg: which actions are most popular, which actions are typically a members’ first, etc)"
+  },
+  {
+    "objectID": "projects/membership-report.html#the-impact-and-dashboard-improvements",
+    "href": "projects/membership-report.html#the-impact-and-dashboard-improvements",
+    "title": "Comprehensive Membership Report",
+    "section": "The Impact and Dashboard Improvements",
+    "text": "The Impact and Dashboard Improvements\nOnce the dashboard went live for the partner organization’s team, the amount of time saved for their digital team was immediately apparent; the team lead said that the dashboard saved them hours of manual work each week. They were able to instead spend their time crafting innovative messaging and designing more effective campaigns. We soon added a note in the corner of the dashboard indicating the date of last refresh of the materialized view allowing viewers to know exactly how fresh the dashboard was.\n\nTools: Google BigQuery · SQL · Looker Studio · Google Workflows"
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html",
+    "href": "projects/government-accountability-dashboard.html",
+    "title": "Government Accountability Dashboard",
+    "section": "",
+    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#context",
+    "href": "projects/government-accountability-dashboard.html#context",
+    "title": "Government Accountability Dashboard",
+    "section": "",
+    "text": "At Community Tech Alliance, I developed a dashboard for a government accountability organization tracking donations to politicians, which uncovered patterns between large corporate donations and votes on specific categories of legislation. In total, I tracked thousands of donations across all 50 states."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-data",
+    "href": "projects/government-accountability-dashboard.html#the-data",
+    "title": "Government Accountability Dashboard",
+    "section": "The Data",
+    "text": "The Data\nI integrated political contributions and votes data from the FEC, state financial reports, corporate shareholder information and recorded legislative votes. With data coming from disparate sources, I started with significant cleaning and standardization. Then, using complex SQL queries, I created a stable dashboard table to track the connections between these large donations and the vote outcomes."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-dashboard",
+    "href": "projects/government-accountability-dashboard.html#the-dashboard",
+    "title": "Government Accountability Dashboard",
+    "section": "The Dashboard",
+    "text": "The Dashboard\nI deliberately kept the dashboard simple: 1 page with the ability to filter donations by company, politician and votes. Given the importance of this topic, clarity and credibility mattered more than visual complexity. I additionally included a map to show where these donations had the most impact. Here’s a blurred screenshot to avoid showing any proprietary data but keeping the layout visible."
+  },
+  {
+    "objectID": "projects/government-accountability-dashboard.html#the-impact",
+    "href": "projects/government-accountability-dashboard.html#the-impact",
+    "title": "Government Accountability Dashboard",
+    "section": "The Impact",
+    "text": "The Impact\nUsing the dashboard as a resource, the partner organization published a scorecard holding Fortune 500 companies accountable for their political donations. The resulting scorecard was shared with journalists and advocacy groups to increase public awareness of these companies.\n\nTools: Google BigQuery · SQL · Looker Studio"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\nschool\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\nschool\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Engagement Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\ndigital-campaigns\n\nwork\n\n\n\nBuilding a holistic digital engagement hub for climate organizing nonprofit\n\n\n\nFeb 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Membership Report\n\n\n\nLooker Studio\n\nSQL\n\nGoogle Workflows\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nBuilding a unified membership data pipeline and dashboard for a national women’s advocacy organization.\n\n\n\nOct 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nConnecting corporate political donations to anti-democratic legislation.\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "projects/washrooms-parks.html",
+    "href": "projects/washrooms-parks.html",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "",
+    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-question",
+    "href": "projects/washrooms-parks.html#the-question",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "",
+    "text": "In this project, we aimed to use open source data from the City of Vancouver Open Data Portal to understand the amenities, features and attributes of parks where a washroom was constructed or not."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-pipeline",
+    "href": "projects/washrooms-parks.html#the-pipeline",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "The Pipeline",
+    "text": "The Pipeline\nBefore getting to predictive modelling, we built a data validation pipeline using Pandera to enforce schema constraints on the input data. This included checks for missingness, expected data types, and valid category levels. By building data checks in at the ingestion stage, we were able to prevent data issues downstream and making our overall pipeline more robust."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#reproducibility",
+    "href": "projects/washrooms-parks.html#reproducibility",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nTo ensure that our analysis could be run again and again producing the same results, we spun up a Docker container with stable python versioning and pinned versions of each of our packages. We additionally, included a docker-compose.yml file which is automatically updated with the latest version of the container using a GitHub Action workflow. This had the added benefit for us to collaborate more easily with fewer conflicts as we built out our model, making sure we were all coding in the same exact environment. Furthermore, we wrote a Makefile to allow the entire analysis to run with only one command. To run the analysis yourself, clone the repository and follow the setup instructions in the README; the entire pipeline can be run with a single make all command."
+  },
+  {
+    "objectID": "projects/washrooms-parks.html#the-model-and-findings",
+    "href": "projects/washrooms-parks.html#the-model-and-findings",
+    "title": "Washrooms in Vancouver Public Parks",
+    "section": "The Model and Findings",
+    "text": "The Model and Findings\nWe compared the performance of a k-nearest neighbors (k-nn) algorithm and a Support Vector Machine with Radial Basis Function (SVM RBF) algorithm against a baseline to build a binary classification model predicting the existence of a washroom in each park. We included neighbourhood name, park size (hectare), whether the park is official, whether there are any advisories, whether there are additional facilities and whether the park has special features to fit the model. While neither model was able to substantially improve on the baseline, this was informative in and of itself, suggesting that washroom presence is more a function of historical infrastructure decisions or other neighborhood characteristics that were not included in the dataset we used. However, we did find that park size and the presence of other amenities were stronger signals than the other features in predicting the presence of washrooms, supporting our initial intuition that washrooms would be associated with larger, more developed parks.\n\nReport: View the rendered Report\nCode: View on GitHub\nTools: Python · scikit-learn · Pandera · Docker · matplotlib\nCollaborators: William Song and Chung Ki (Harry) Yau"
   },
   {
     "objectID": "index.html",
