@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-01">
-<meta name="description" content="A unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms.">
+<meta name="dcterms.date" content="2024-11-03">
+<meta name="description" content="A comprehensive digital advertising dashboard tracking spend and engagement across platforms and election cycles.">
 
-<title>Digital Engagement Dashboard – Rebecca Sokol-Snyder</title>
+<title>Multi-Year Digital Ads Analysis – Rebecca Sokol-Snyder</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
 
 <meta property="og:title" content="Rebecca Sokol-Snyder — Data Science Portfolio">
 <meta property="og:description" content="Projects and writing on data science, analytics, and visualisation.">
-<meta property="og:image" content="../../assets/projects/climate-cover.jpg">
+<meta property="og:image" content="../../assets/projects/digital-cover-image.jpg">
 <meta property="og:site_name" content="Rebecca Sokol-Snyder">
 </head>
 
@@ -146,10 +146,9 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
    
   <ul class="collapse">
   <li><a href="#context" id="toc-context" class="nav-link active" data-scroll-target="#context">Context</a></li>
-  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
-  <li><a href="#the-dashboard" id="toc-the-dashboard" class="nav-link" data-scroll-target="#the-dashboard">The Dashboard</a></li>
-  <li><a href="#the-impact" id="toc-the-impact" class="nav-link" data-scroll-target="#the-impact">The Impact</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  <li><a href="#the-2022-dashboard" id="toc-the-2022-dashboard" class="nav-link" data-scroll-target="#the-2022-dashboard">The 2022 Dashboard</a></li>
+  <li><a href="#the-2024-dashboard" id="toc-the-2024-dashboard" class="nav-link" data-scroll-target="#the-2024-dashboard">The 2024 Dashboard</a></li>
+  <li><a href="#the-impact-reflections" id="toc-the-impact-reflections" class="nav-link" data-scroll-target="#the-impact-reflections">The Impact + Reflections</a></li>
   </ul>
 </nav>
     </div>
@@ -158,10 +157,11 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Digital Engagement Dashboard</h1>
+<h1 class="title">Multi-Year Digital Ads Analysis</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Looker Studio</div>
     <div class="quarto-category">SQL</div>
+    <div class="quarto-category">dbt</div>
     <div class="quarto-category">BigQuery</div>
     <div class="quarto-category">data-visualization</div>
     <div class="quarto-category">dashboard</div>
@@ -172,7 +172,7 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    A unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms.
+    A comprehensive digital advertising dashboard tracking spend and engagement across platforms and election cycles.
   </div>
 </div>
 
@@ -183,7 +183,7 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 1, 2024</p>
+      <p class="date">November 3, 2024</p>
     </div>
   </div>
   
@@ -197,33 +197,25 @@ gtag('config', 'G-SQD1XHW0DQ', { 'anonymize_ip': true});
 
 <section id="context" class="level2">
 <h2 class="anchored" data-anchor-id="context">Context</h2>
-<p>A climate organizing nonprofit approached CTA with a big ask. They wanted a comprehensive view of their digital presence across email, sms, and social media. Their staff were each experts in their own domain but when it came to having a holistic view and being able to report back to senior organizational leadership, they were having to spend time coordinating to answer simple questions.</p>
+<p>Each general election cycle in the US, campaigns and advocacy organizations spend millions on digital ads to persuade voters and get them to turn out on election day. Many of these groups use multiple digital firms to help optimize and place their ads, meaning that while they get reporting back from each of their vendors they don’t have a unified view of their spend and campaigns holistically.</p>
+<p>One of these organizations approached Community Tech Alliance after the 2022 election with a simple question without a straightforward way to get an answer: How much did we spend this cycle?</p>
 </section>
-<section id="the-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
-<p>Their digital work happened across 5 key platforms: Google Analytics on multiple websites, a social media management tool covering their presence on Facebook, Instagram, Twitter, and TikTok, email via Action Network, text via Mobile Commons, and another platform managing shareable action toolkits. I took a lead role coordinating with our engineering team to build data ingestion pipelines for each of their tools, bringing their data together reliably in one centralized database. Next, another analyst and I split the sources to develop full dashboard pages for each of their priority platforms in the same dashboard.</p>
-<p>Using SQL mirror connections for both their email and text platforms, I set to pulling out the key metrics and data fields needed to track subscribers over time and the particular messages that most drove engagement. One thing that was difficult in this work was that they had been using the same email tool for years, meaning they had a large volume of data. In particular their platform tracked each send, open, click, and reply as actions in the same table. When the table reached a certain size, they simply added another table: <code>email_activities_1</code>, <code>email_activities_2</code>, etc. This was both a challenge for our engineers and myself ensuring that the complete pipeline, from ingestion to analysis, was robust enough to handle the new tables when they were created.</p>
-<p>For my first attempt, I wrote a complicated query with many <code>UNION ALL</code> statements combining each table with a Cloud Logging notification for myself to update the query when a new table appeared in the dataset. This solution worked but would require ongoing maintenance from either myself or a future analyst. As a second iteration, I looked to take advantage of the consistent table naming through wildcard syntax. Luckily, the way that our sync worked, each table was truly a table rather than a view or materialized view. As such, I was able to write a fairly simple query that was reliable and would stand the test of time:</p>
-<pre><code>WITH activities AS (
-  SELECT *
-  FROM `&lt;bigquery_project_id&gt;.&lt;dataset&gt;.email_activities_*`
-)
-SELECT ...</code></pre>
+<section id="the-2022-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="the-2022-dashboard">The 2022 Dashboard</h2>
+<p>When the organization approached us they had 300+ files ranging from clean consistent CSVs to exported PDFs of excel files and manually written reports. The files also contained slightly different metrics between campaigns and covered different time frames making it a challenge to bring everything together. I designed a Google Sheets template with additional metadata variables for state, campaign, and digital firm and transformed each of the data files to match the template. For some, I was able to do this programmatically but for others it required manual copying into the table.</p>
+<p>After weeks of work, I had put together a single complete table with data for every single one the organization’s digital campaigns. I leveraged the native integration between Google Sheets and BigQuery to make it more accessible and analyzeable. I then built a Looker Studio dashboard with KPI boxes showing overall Spend, Impressions, Clicks, Video/Audio Completions, Average Reach, Average Frequency of ads as well as calculated Completion Rate, Click-Through Rate, and Cost per thousand Impressions (CPM). I set up filters so that the organization could look at each of the metrics by campaign, state, platform, language, and ad format. I also set up a system for the team to indicate certain campaigns with topic and audience tags so that they could filter on these categories, such as Black voters or reproductive justice.</p>
 </section>
-<section id="the-dashboard" class="level2">
-<h2 class="anchored" data-anchor-id="the-dashboard">The Dashboard</h2>
-<p>The other CTA analyst on this project and I built a multi-page dashboard to give the organizations team a single place where they could go to access information across all their tools. The homepage provided priority KPIs for each platform followed by individual dashboard pages for each platform to dig deeper into engagement through each. We ensured consistent style across the dashboard and used the same visualization types for similar metrics for each platform. Below is a screenshot of one of the dashboard pages that I owned.</p>
-<p><img src="../assets/projects/digital-engagement-screenshot.png" class="blurred-screenshot img-fluid"></p>
+<section id="the-2024-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="the-2024-dashboard">The 2024 Dashboard</h2>
+<p>After a successful engagement in 2022, the organization wanted to work together again, this time with advance planning and closer to real-time reporting. I started by modifying the template I had previously made to be more flexible for new campaigns. The organization was able to share the template with their digital firms, and wrote contracts so that they would receive all reporting in the preferred format on a clear weekly cadence.</p>
+<p>With consistent reporting, I was able to automate more of the data ingestion process. To start, I set up a Google Workflow that ran once a week to load files from a shared Google Drive Folder. The workflow created tables in separate datasets by state. I then set I up a dbt project to handle data cleaning and standardization in SQL, producing a single reliable materialized view to power the dashboard.</p>
+<p>On more granular data, I was able to make some key edits to the dashboard from 2022 to enrich what the organization was able to understand about their programs. I kept the same home page with overall KPIs but added several additional dashboard pages. The first used the consistent time frames of reporting to allow them to filter the data by date and understand how much they spent and where across any time frame. I also included a page with plots faceted by state to show how spending across ad formats changed over time. Finally, I included a page of toplines with cumulative metrics across a whole variety of variables.</p>
 </section>
-<section id="the-impact" class="level2">
-<h2 class="anchored" data-anchor-id="the-impact">The Impact</h2>
-<p>Because of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections.</p>
-</section>
-<section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
-<p>This was one of the more complex engagements I worked on at CTA. With data ingestion from 5 different platforms, several of which were new for our engineering team, plus close collaboration with another analyst, keeping everything consistent required more coordination than a typical solo project. Because the organization wanted both a deeper understanding of each platform specifically as well as the overall view of their program, we were able to begin analysis for the dashboard of data from some platforms before the pipelines for others had been completed. As I noted earlier, the other analyst and I were able to split the work so each of us led the analysis for different platforms. We were then able to offer each other regular feedback and reviews to make sure things were cohesive between code and visualization styles.</p>
+<section id="the-impact-reflections" class="level2">
+<h2 class="anchored" data-anchor-id="the-impact-reflections">The Impact + Reflections</h2>
+<p>Being able to collaborate with the same organization across multiple election cycles was a privilege and allowed us to iterate on a dashboard product that genuinely grew to meet their needs. The 2022 dashboard answered their initial question and established a foundation of trust. By 2024, with advance planning and consistent vendor reporting, the organization’s team was able to monitor campaign performance in near real-time and make informed adjustments mid-cycle — a significant shift from the retrospective reporting that had been possible before.</p>
 <hr>
-<p><strong>Tools</strong>: Google BigQuery · SQL · Looker Studio · Google Analytics · Action Network · MobileCommons · Sprout Social</p>
+<p><strong>Tools</strong>: Google BigQuery · SQL · Looker Studio · dbt · Google Workflows</p>
 
 
 </section>

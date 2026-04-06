@@ -1,6 +1,6 @@
 ---
 title: "MarsCast: Weather Patterns from the Red Planet"
-description: "An interactive Shiny dashboard exploring temperature and pressure trends from NASA's Curiosity rover, with an AI-powered chatbot for querying the data."
+description: "An interactive Shiny dashboard exploring weather trends on Mars, with an AI-powered chatbot."
 date: 2026-03-17
 categories: [Python, Shiny, RAG, LLM, Anthropic, parquet, dashboard, data-visualization, school] 
 image: "../../assets/projects/mars.png"

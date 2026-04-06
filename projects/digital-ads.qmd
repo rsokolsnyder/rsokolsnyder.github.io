@@ -1,0 +1,36 @@
+---
+title: "Multi-Year Digital Ads Analysis"
+description: "A comprehensive digital advertising dashboard tracking spend and engagement across platforms and election cycles."
+date: 2024-11-03
+categories: [Looker Studio, SQL, dbt, BigQuery, data-visualization, dashboard, digital-campaigns, work]
+image: "../../assets/projects/digital-cover-image.jpg"
+draft: false
+---
+
+## Context
+
+Each general election cycle in the US, campaigns and advocacy organizations spend millions on digital ads to persuade voters and get them to turn out on election day. Many of these groups use multiple digital firms to help optimize and place their ads, meaning that while they get reporting back from each of their vendors they don't have a unified view of their spend and campaigns holistically. 
+
+One of these organizations approached Community Tech Alliance after the 2022 election with a simple question without a straightforward way to get an answer: How much did we spend this cycle? 
+
+## The 2022 Dashboard
+
+When the organization approached us they had 300+ files ranging from clean consistent CSVs to exported PDFs of excel files and manually written reports. The files also contained slightly different metrics between campaigns and covered different time frames making it a challenge to bring everything together. I designed a Google Sheets template with additional metadata variables for state, campaign, and digital firm and transformed each of the data files to match the template. For some, I was able to do this programmatically but for others it required manual copying into the table. 
+
+After weeks of work, I had put together a single complete table with data for every single one the organization's digital campaigns. I leveraged the native integration between Google Sheets and BigQuery to make it more accessible and analyzeable. I then built a Looker Studio dashboard with KPI boxes showing overall Spend, Impressions, Clicks, Video/Audio Completions, Average Reach, Average Frequency of ads as well as calculated Completion Rate, Click-Through Rate, and Cost per thousand Impressions (CPM). I set up filters so that the organization could look at each of the metrics by campaign, state, platform, language, and ad format. I also set up a system for the team to indicate certain campaigns with topic and audience tags so that they could filter on these categories, such as Black voters or reproductive justice.
+
+## The 2024 Dashboard
+
+After a successful engagement in 2022, the organization wanted to work together again, this time with advance planning and closer to real-time reporting. I started by modifying the template I had previously made to be more flexible for new campaigns. The organization was able to share the template with their digital firms, and wrote contracts so that they would receive all reporting in the preferred format on a clear weekly cadence. 
+
+With consistent reporting, I was able to automate more of the data ingestion process. To start, I set up a Google Workflow that ran once a week to load files from a shared Google Drive Folder. The workflow created tables in separate datasets by state. I then set I up a dbt project to handle data cleaning and standardization in SQL, producing a single reliable materialized view to power the dashboard.
+
+On more granular data, I was able to make some key edits to the dashboard from 2022 to enrich what the organization was able to understand about their programs. I kept the same home page with overall KPIs but added several additional dashboard pages. The first used the consistent time frames of reporting to allow them to filter the data by date and understand how much they spent and where across any time frame. I also included a page with plots faceted by state to show how spending across ad formats changed over time. Finally, I included a page of toplines with cumulative metrics across a whole variety of variables.
+
+## The Impact + Reflections
+
+Being able to collaborate with the same organization across multiple election cycles was a privilege and allowed us to iterate on a dashboard product that genuinely grew to meet their needs. The 2022 dashboard answered their initial question and established a foundation of trust. By 2024, with advance planning and consistent vendor reporting, the organization's team was able to monitor campaign performance in near real-time and make informed adjustments mid-cycle — a significant shift from the retrospective reporting that had been possible before. 
+
+---
+
+**Tools**: Google BigQuery · SQL · Looker Studio · dbt · Google Workflows

@@ -1,9 +1,9 @@
 ---
 title: "Digital Engagement Dashboard"
-description: "A unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms"
+description: "A unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms."
 date: 2024-02-01
 categories: [Looker Studio, SQL, BigQuery, data-visualization, dashboard, digital-campaigns, work]
-image: "../../assets/projects/digital-cover-image.jpg"
+image: "../../assets/projects/climate-cover.jpg"
 draft: false
 ---
 

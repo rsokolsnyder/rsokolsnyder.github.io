@@ -63,6 +63,13 @@
     "text": "The Dashboard\nThe other CTA analyst on this project and I built a multi-page dashboard to give the organizations team a single place where they could go to access information across all their tools. The homepage provided priority KPIs for each platform followed by individual dashboard pages for each platform to dig deeper into engagement through each. We ensured consistent style across the dashboard and used the same visualization types for similar metrics for each platform. Below is a screenshot of one of the dashboard pages that I owned."
   },
   {
+    "objectID": "projects/digital-engagement.html#the-impact",
+    "href": "projects/digital-engagement.html#the-impact",
+    "title": "Digital Engagement Dashboard",
+    "section": "The Impact",
+    "text": "The Impact\nBecause of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections."
+  },
+  {
     "objectID": "projects/digital-engagement.html#reflection",
     "href": "projects/digital-engagement.html#reflection",
     "title": "Digital Engagement Dashboard",
@@ -196,11 +203,46 @@
     "text": "The Impact\nUsing the dashboard as a resource, the partner organization published a scorecard holding Fortune 500 companies accountable for their political donations. The resulting scorecard was shared with journalists and advocacy groups to increase public awareness of these companies.\n\nTools: Google BigQuery · SQL · Looker Studio"
   },
   {
+    "objectID": "projects/digital-ads.html",
+    "href": "projects/digital-ads.html",
+    "title": "Multi-Year Digital Ads Analysis",
+    "section": "",
+    "text": "Each general election cycle in the US, campaigns and advocacy organizations spend millions on digital ads to persuade voters and get them to turn out on election day. Many of these groups use multiple digital firms to help optimize and place their ads, meaning that while they get reporting back from each of their vendors they don’t have a unified view of their spend and campaigns holistically.\nOne of these organizations approached Community Tech Alliance after the 2022 election with a simple question without a straightforward way to get an answer: How much did we spend this cycle?"
+  },
+  {
+    "objectID": "projects/digital-ads.html#context",
+    "href": "projects/digital-ads.html#context",
+    "title": "Multi-Year Digital Ads Analysis",
+    "section": "",
+    "text": "Each general election cycle in the US, campaigns and advocacy organizations spend millions on digital ads to persuade voters and get them to turn out on election day. Many of these groups use multiple digital firms to help optimize and place their ads, meaning that while they get reporting back from each of their vendors they don’t have a unified view of their spend and campaigns holistically.\nOne of these organizations approached Community Tech Alliance after the 2022 election with a simple question without a straightforward way to get an answer: How much did we spend this cycle?"
+  },
+  {
+    "objectID": "projects/digital-ads.html#the-2022-dashboard",
+    "href": "projects/digital-ads.html#the-2022-dashboard",
+    "title": "Multi-Year Digital Ads Analysis",
+    "section": "The 2022 Dashboard",
+    "text": "The 2022 Dashboard\nWhen the organization approached us they had 300+ files ranging from clean consistent CSVs to exported PDFs of excel files and manually written reports. The files also contained slightly different metrics between campaigns and covered different time frames making it a challenge to bring everything together. I designed a Google Sheets template with additional metadata variables for state, campaign, and digital firm and transformed each of the data files to match the template. For some, I was able to do this programmatically but for others it required manual copying into the table.\nAfter weeks of work, I had put together a single complete table with data for every single one the organization’s digital campaigns. I leveraged the native integration between Google Sheets and BigQuery to make it more accessible and analyzeable. I then built a Looker Studio dashboard with KPI boxes showing overall Spend, Impressions, Clicks, Video/Audio Completions, Average Reach, Average Frequency of ads as well as calculated Completion Rate, Click-Through Rate, and Cost per thousand Impressions (CPM). I set up filters so that the organization could look at each of the metrics by campaign, state, platform, language, and ad format. I also set up a system for the team to indicate certain campaigns with topic and audience tags so that they could filter on these categories, such as Black voters or reproductive justice."
+  },
+  {
+    "objectID": "projects/digital-ads.html#the-2024-dashboard",
+    "href": "projects/digital-ads.html#the-2024-dashboard",
+    "title": "Multi-Year Digital Ads Analysis",
+    "section": "The 2024 Dashboard",
+    "text": "The 2024 Dashboard\nAfter a successful engagement in 2022, the organization wanted to work together again, this time with advance planning and closer to real-time reporting. I started by modifying the template I had previously made to be more flexible for new campaigns. The organization was able to share the template with their digital firms, and wrote contracts so that they would receive all reporting in the preferred format on a clear weekly cadence.\nWith consistent reporting, I was able to automate more of the data ingestion process. To start, I set up a Google Workflow that ran once a week to load files from a shared Google Drive Folder. The workflow created tables in separate datasets by state. I then set I up a dbt project to handle data cleaning and standardization in SQL, producing a single reliable materialized view to power the dashboard.\nOn more granular data, I was able to make some key edits to the dashboard from 2022 to enrich what the organization was able to understand about their programs. I kept the same home page with overall KPIs but added several additional dashboard pages. The first used the consistent time frames of reporting to allow them to filter the data by date and understand how much they spent and where across any time frame. I also included a page with plots faceted by state to show how spending across ad formats changed over time. Finally, I included a page of toplines with cumulative metrics across a whole variety of variables."
+  },
+  {
+    "objectID": "projects/digital-ads.html#the-impact-reflections",
+    "href": "projects/digital-ads.html#the-impact-reflections",
+    "title": "Multi-Year Digital Ads Analysis",
+    "section": "The Impact + Reflections",
+    "text": "The Impact + Reflections\nBeing able to collaborate with the same organization across multiple election cycles was a privilege and allowed us to iterate on a dashboard product that genuinely grew to meet their needs. The 2022 dashboard answered their initial question and established a foundation of trust. By 2024, with advance planning and consistent vendor reporting, the organization’s team was able to monitor campaign performance in near real-time and make informed adjustments mid-cycle — a significant shift from the retrospective reporting that had been possible before.\n\nTools: Google BigQuery · SQL · Looker Studio · dbt · Google Workflows"
+  },
+  {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\nschool\n\n\n\nAn interactive Shiny dashboard exploring temperature and pressure trends from NASA’s Curiosity rover, with an AI-powered chatbot for querying the data.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\nschool\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Engagement Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\ndigital-campaigns\n\nwork\n\n\n\nA unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms\n\n\n\nFeb 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Membership Report\n\n\n\nLooker Studio\n\nSQL\n\nGoogle Workflows\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nBuilding a unified membership data pipeline and dashboard for a national women’s advocacy organization.\n\n\n\nOct 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nConnecting corporate political donations to anti-democratic legislation.\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "MarsCast: Weather Patterns from the Red Planet\n\n\n\nPython\n\nShiny\n\nRAG\n\nLLM\n\nAnthropic\n\nparquet\n\ndashboard\n\ndata-visualization\n\nschool\n\n\n\nAn interactive Shiny dashboard exploring weather trends on Mars, with an AI-powered chatbot.\n\n\n\nMar 17, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Public Parks\n\n\n\nPython\n\nmachine-learning\n\nclassification\n\nDocker\n\nPandera\n\ndata-validation\n\nreproducibility\n\nopen-data\n\nschool\n\n\n\nA binary classifier to predict whether Vancouver parks have washroom facilities, using municipal open data.\n\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nMulti-Year Digital Ads Analysis\n\n\n\nLooker Studio\n\nSQL\n\ndbt\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\ndigital-campaigns\n\nwork\n\n\n\nA comprehensive digital advertising dashboard tracking spend and engagement across platforms and election cycles.\n\n\n\nNov 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nDigital Engagement Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\ndigital-campaigns\n\nwork\n\n\n\nA unified digital analytics dashboard tracking email, SMS, and social media engagement for a climate organizing nonprofit across 5 platforms.\n\n\n\nFeb 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprehensive Membership Report\n\n\n\nLooker Studio\n\nSQL\n\nGoogle Workflows\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nBuilding a unified membership data pipeline and dashboard for a national women’s advocacy organization.\n\n\n\nOct 15, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nGovernment Accountability Dashboard\n\n\n\nLooker Studio\n\nSQL\n\nBigQuery\n\ndata-visualization\n\ndashboard\n\nwork\n\n\n\nConnecting corporate political donations to anti-democratic legislation.\n\n\n\nSep 1, 2022\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "projects/washrooms-parks.html",
@@ -250,12 +292,5 @@
     "title": "Writing",
     "section": "",
     "text": "Understanding political bias and information transparency in the age of AI\n\n\n\nnews\n\nanalysis\n\nbias\n\npolitics\n\nLLM\n\nAI\n\n\n\n\n\n\n\n\n\nJan 14, 2026\n\n6 min\n\n\n\n\nNo matching items\n Back to top"
-  },
-  {
-    "objectID": "projects/digital-engagement.html#the-impact",
-    "href": "projects/digital-engagement.html#the-impact",
-    "title": "Digital Engagement Dashboard",
-    "section": "The Impact",
-    "text": "The Impact\nBecause of the clear documentation and iterative development approach that we took to this dashboard, once it was complete we were able to completely hand off the product to the organization’s team without need for ongoing maintenance and monitoring. The dashboard proved especially helpful to the organizations team as they ran several voter contact campaigns for the 2024 elections."
   }
 ]
